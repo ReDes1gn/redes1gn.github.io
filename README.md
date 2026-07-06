@@ -52,4 +52,4 @@ Edit `index.html` and push to `main`. GitHub Pages redeploys in about a minute. 
 
 ## Related
 
-The RēDesign application itself (the tool that does the work) lives in its own separate repository.
+The RēDesign application itself (the tool that does the work) lives at **[LunarWerxs/ReDesign](https://github.com/LunarWerxs/ReDesign)**.
