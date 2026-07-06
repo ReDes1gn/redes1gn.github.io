@@ -1,0 +1,30 @@
+# --- OS cruft ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# --- Logs & temp ---
+*.log
+*.tmp
+*.bak
+.cache/
+tmp/
+
+# --- Tooling that might wander in ---
+node_modules/
+npm-debug.log*
+yarn-error.log
+.parcel-cache/
