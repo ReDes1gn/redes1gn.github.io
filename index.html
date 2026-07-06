@@ -4,12 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RēDesign: One screenshot in, a wall of reimagined UIs out</title>
-<meta name="description" content="RēDesign fans a single UI screenshot out to six frontier AI models at once and returns a browsable wall of self-contained HTML reimaginings, side by side with the original." />
+<meta name="description" content="Drop in one UI screenshot and RēDesign runs it past Claude, GPT, Gemini and more at once, then lines up every redesign next to the original so you can compare." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="alternate icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/icon.svg">
+
+<!-- Open Graph / share card -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RēDesign">
+<meta property="og:title" content="RēDesign: reimagine any screen with six AI models at once">
+<meta property="og:description" content="Drop in one UI screenshot and RēDesign runs it past Claude, GPT, Gemini and more at once, then lines up every redesign next to the original.">
+<meta property="og:url" content="https://redes1gn.github.io/">
+<meta property="og:image" content="https://redes1gn.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RēDesign: one screenshot in, a wall of AI redesigns out">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RēDesign: reimagine any screen with six AI models at once">
+<meta name="twitter:description" content="One screenshot in, a wall of redesigns out. It runs past Claude, GPT, Gemini and more at once.">
+<meta name="twitter:image" content="https://redes1gn.github.io/og-image.png">
 <style>
   :root{
     --bg: oklch(0.145 0 0);
@@ -662,8 +677,8 @@
     <div class="wrap hero-grid">
 
       <div class="hero-copy">
-        <h1>Reimagine any screen, <span class="grad-text">six frontier models</span> at a time.</h1>
-        <p class="lede">Drop in a screenshot, fan it out across Claude, GPT, Gemini and more at once, and browse every reimagining beside the original.</p>
+        <h1>Reimagine any screen, <span class="grad-text">six AI models</span> at a time.</h1>
+        <p class="lede">Drop in a screenshot and RēDesign runs it past Claude, GPT, Gemini and more at the same time, then lines up every redesign next to the original.</p>
       </div>
 
       <div class="wall" aria-label="Eight sample reimaginings generated from one input screenshot, each by a different model and preset">
@@ -860,29 +875,29 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">How it works</p>
-        <h2>One screenshot to a full wall, in four steps.</h2>
+        <h2>From one screenshot to a wall of redesigns, in four steps.</h2>
       </div>
 
       <div class="steps">
         <div class="step">
           <span class="num">01</span>
           <h3>Drop in a screenshot</h3>
-          <p>One image, or a folder of the same screen.</p>
+          <p>A single image, or a folder of shots of the same screen.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
           <h3>Pick models + presets</h3>
-          <p>Pick models and presets, or write your own. Add a style reference to steer the look.</p>
+          <p>Choose your models and presets, or write your own prompt. Add a style reference if you want a particular look.</p>
         </div>
         <div class="step">
           <span class="num">03</span>
           <h3>Hit run</h3>
-          <p>Calls fan out to every provider at once, with self-healing key rotation.</p>
+          <p>Every model runs at the same time. If a key gets rate-limited, it quietly rotates to the next one.</p>
         </div>
         <div class="step">
           <span class="num">04</span>
           <h3>Browse the wall</h3>
-          <p>Results land in a filterable grid, original shown first.</p>
+          <p>Everything shows up in a grid you can filter, with the original first so it is easy to compare.</p>
         </div>
       </div>
     </div>
@@ -893,8 +908,8 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Models</p>
-        <h2>Every major model, and any you add.</h2>
-        <p>Ships with Claude, GPT, Gemini, DeepSeek and Qwen. Swap in newer versions or your own anytime.</p>
+        <h2>Every major model, plus any you add yourself.</h2>
+        <p>Comes set up with Claude, GPT, Gemini, DeepSeek and Qwen. Point it at newer versions or add your own whenever you want.</p>
       </div>
 
       <div class="models-strip" role="list" aria-label="Supported models">
@@ -908,7 +923,7 @@
 
       <div class="section-head" style="margin-top: 48px; margin-bottom: 22px;">
         <p class="eyebrow">Prompt presets</p>
-        <h2 style="font-size: clamp(1.3rem, 2.2vw, 1.7rem);">Eight directions, or your own prompt.</h2>
+        <h2 style="font-size: clamp(1.3rem, 2.2vw, 1.7rem);">Eight presets to start from, or write your own.</h2>
       </div>
       <div class="presets" role="list" aria-label="Prompt presets">
         <span class="preset-chip" role="listitem"><b>Faithful Refresh</b></span>
@@ -931,8 +946,8 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Built for real work</p>
-        <h2>A serious tool under the pretty screenshots.</h2>
-        <p>Every reimagining is a real, self-contained prototype, not a mockup.</p>
+        <h2>A real tool under the pretty screenshots.</h2>
+        <p>Every result is a real, working page you can click around in, not a flat mockup.</p>
       </div>
 
       <div class="bento">
@@ -942,7 +957,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.4"/><rect x="14" y="4" width="7" height="7" rx="1.4"/><rect x="3" y="15" width="7" height="5" rx="1.4"/><rect x="14" y="13" width="7" height="7" rx="1.4"/></svg>
           </div>
           <h3>Side-by-side viewer</h3>
-          <p>Filter by model or preset; set columns and device width, desktop to phone.</p>
+          <p>Filter by model or preset, change the number of columns, and preview at desktop, laptop, tablet or phone width.</p>
         </div>
 
         <div class="card span-3">
@@ -950,7 +965,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16l4.5-6 3.5 4 3-4L20 16"/><rect x="3" y="4" width="18" height="16" rx="2.4"/><circle cx="8" cy="8.5" r="1.4" fill="currentColor" stroke="none"/></svg>
           </div>
           <h3>Reference images</h3>
-          <p>Drop in a style shot; every job borrows its mood and palette, not its layout.</p>
+          <p>Drop in a look you like and every model borrows its mood and colors, not its layout.</p>
         </div>
 
         <div class="card span-2">
@@ -958,7 +973,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 3.5v6c0 4.6-3 8.7-7 10.5-4-1.8-7-5.9-7-10.5v-6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
           </div>
           <h3>Self-healing keys</h3>
-          <p>Many keys per provider, round-robined. Flaky ones cool down and heal out of rotation.</p>
+          <p>Give each provider a stack of API keys and it rotates through them. Ones that start failing get benched for a while, then come back on their own.</p>
         </div>
 
         <div class="card span-2">
@@ -966,7 +981,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9l-2.5 3L8 15M16 9l2.5 3L16 15M13.5 8l-3 8"/></svg>
           </div>
           <h3>Sandboxed rendering</h3>
-          <p>Model-authored HTML and JS run in a sandboxed iframe. Interactive, but it cannot touch your data.</p>
+          <p>Whatever the models write runs in a locked-down iframe. You can click around in it, but it cannot reach your data or the rest of the app.</p>
         </div>
 
         <div class="card span-2">
@@ -974,7 +989,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.2M20 12a8 8 0 0 1-14 5.2"/><path d="M18 4v4h-4M6 20v-4h4"/></svg>
           </div>
           <h3>Runs locally</h3>
-          <p>Pure Bun, localhost-only. Your screenshots go nowhere but the model APIs you pick.</p>
+          <p>It runs on your own machine and only talks to localhost. Your screenshots never leave except to the model APIs you chose.</p>
         </div>
 
         <div class="card span-3">
@@ -982,7 +997,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
           </div>
           <h3>Reproducible + scriptable</h3>
-          <p>Every run is saved to a manifest. Full CLI, plus an MCP server for agents.</p>
+          <p>Every run is written down so you can replay it later. There is a full command-line version too, plus an MCP server so agents can drive it.</p>
         </div>
 
         <div class="card span-3">
@@ -990,7 +1005,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <h3>Even text-only models see the UI</h3>
-          <p>Text-only models get an auto-caption first, so they reimagine the real screen.</p>
+          <p>Models that cannot see images get a written description of your screenshot first, so they still redesign the real thing.</p>
         </div>
 
       </div>
@@ -1005,7 +1020,7 @@
       <div class="section-head">
         <p class="eyebrow">The wall, in full</p>
         <h2>One admin dashboard. Eight directions.</h2>
-        <p>One run against the screenshot above. Filter by model.</p>
+        <p>All eight came from a single run on the screenshot above. Filter by model to compare.</p>
       </div>
 
       <div class="filter-bar" role="group" aria-label="Filter gallery by model">
@@ -1201,8 +1216,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
           </div>
           <div>
-            <h4>Concurrent by default</h4>
-            <p>Every model fires at once, so a run finishes as fast as your slowest provider.</p>
+            <h4>Everything at once</h4>
+            <p>Every model runs at the same time, so a batch is only as slow as your slowest provider.</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1211,7 +1226,7 @@
           </div>
           <div>
             <h4>Localhost-only server</h4>
-            <p>Pure Bun. Nothing binds beyond your own machine.</p>
+            <p>Built on Bun, and nothing listens outside your own machine.</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1219,8 +1234,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /><circle cx="17" cy="6" r="0" /></svg>
           </div>
           <div>
-            <h4>Full CLI parity</h4>
-            <p>Everything in the UI has a CLI equivalent, plus an MCP server.</p>
+            <h4>Command line and agents</h4>
+            <p>Anything you can do in the UI you can do from the command line, or hand off to an agent over MCP.</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1229,7 +1244,7 @@
           </div>
           <div>
             <h4>Manifests, not mystery</h4>
-            <p>Every run is recorded and reproducible, not one-off luck.</p>
+            <p>Every run is written down, so a good result is repeatable, not a fluke.</p>
           </div>
         </div>
       </div>
