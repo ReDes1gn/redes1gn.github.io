@@ -4,6 +4,16 @@ All notable changes to the RēDesign landing page are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-07-06
+
+### Changed
+- Brought back the colorful hero card wall from 1.0.0. The raw app screenshots that replaced it in 1.1.0 read as flat and out of place there.
+- The gallery keeps its card design and model filter, but every thumbnail is now a real output: eight actual redesigns of the sample dashboard by Claude, GPT, Gemini and Qwen, captured straight from a live run.
+- The control panel screenshot moved to the features section, cropped tight and framed, where it backs up the "real tool" claim instead of carrying the hero.
+
+### Removed
+- The DeepSeek gallery filter, since the showcased run has no DeepSeek output. The models section still lists it.
+
 ## [1.1.0] - 2026-07-06
 
 ### Changed
