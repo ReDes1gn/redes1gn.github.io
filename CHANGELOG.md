@@ -4,6 +4,11 @@ All notable changes to the RēDesign landing page are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.2] - 2026-07-06
+
+### Changed
+- On small screens the gallery now starts at four cards with a "Show all eight" button, so the page is not one endless scroll. Tapping the button, or any model filter, reveals the rest. Desktop still shows all eight at once.
+
 ## [1.2.1] - 2026-07-06
 
 ### Changed

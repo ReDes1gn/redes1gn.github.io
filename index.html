@@ -612,6 +612,26 @@
   .gallery-item .meta-left{ display: flex; align-items: center; gap: 8px; min-width: 0; }
   .gallery-item .meta-left .name{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+  /* mobile pacing: start at four cards, reveal the rest on demand */
+  .gallery-more{
+    display: none;
+    margin: 18px auto 0;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--fg);
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 10px 24px;
+    cursor: pointer;
+  }
+  .gallery-more:hover{ border-color: var(--violet); }
+  @media (max-width: 700px){
+    .gallery-grid.collapsed .gallery-item:nth-child(n+5){ display: none; }
+    .gallery-grid.collapsed + .gallery-more{ display: block; }
+  }
+
   /* ---------- Presets ---------- */
   .presets{
     display: flex;
@@ -1115,7 +1135,7 @@
         <button class="filter-btn" data-filter="qwen" type="button">Qwen</button>
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-grid collapsed" id="galleryGrid">
 
         <div class="gallery-item" data-model="claude">
           <img class="thumb" src="/shots/gallery/claude-bold.png" width="726" height="462" loading="lazy" decoding="async"
@@ -1190,6 +1210,9 @@
         </div>
 
       </div>
+
+      <!-- mobile-only pacing: the grid starts at four cards on small screens -->
+      <button class="gallery-more" type="button" aria-controls="galleryGrid" aria-expanded="false">Show all eight</button>
     </div>
   </section>
 
@@ -1266,12 +1289,21 @@
   (function(){
     var buttons = document.querySelectorAll('.filter-btn');
     var items = document.querySelectorAll('.gallery-item');
+    var grid = document.getElementById('galleryGrid');
+    var more = document.querySelector('.gallery-more');
+    function expand(){
+      grid.classList.remove('collapsed');
+      if (more) more.setAttribute('aria-expanded','true');
+    }
+    if (more) more.addEventListener('click', expand);
     buttons.forEach(function(btn){
       btn.addEventListener('click', function(){
         buttons.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
         btn.classList.add('active');
         btn.setAttribute('aria-pressed','true');
         var filter = btn.getAttribute('data-filter');
+        // a model filter means the visitor wants to compare; stop paginating
+        if (filter !== 'all') expand();
         items.forEach(function(item){
           var match = filter === 'all' || item.getAttribute('data-model') === filter;
           item.classList.toggle('hidden-item', !match);
