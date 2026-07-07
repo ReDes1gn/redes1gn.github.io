@@ -144,21 +144,6 @@
     transition: color 0.15s ease;
   }
   .nav-links a:hover{ color: var(--fg); }
-  .nav-models{
-    display: none;
-  }
-  @media (min-width: 860px){
-    .nav-models{
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      color: var(--muted-2);
-      border: 1px solid var(--line);
-      padding: 6px 12px;
-      border-radius: 999px;
-    }
-  }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -200,134 +185,6 @@
     max-width: 46ch;
     line-height: 1.6;
   }
-  .hero-eyebrow{ margin-bottom: 18px; }
-
-  .hero-stats{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  .stat-chip{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 10px 16px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-  }
-  .stat-chip b{
-    font-size: 1.05rem;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
-  }
-  .stat-chip span{
-    font-size: 0.72rem;
-    color: var(--muted-2);
-  }
-
-  .hero-note{
-    margin-top: 28px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--muted-2);
-  }
-  .hero-note svg{ width: 16px; height: 16px; flex: none; stroke: var(--violet); }
-
-  /* ---------- Gallery wall (hero visual) ---------- */
-  .wall{
-    position: relative;
-    min-height: clamp(420px, 52vw, 620px);
-  }
-  .wall-inner{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: inherit;
-  }
-
-  .input-card{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(238px, 46vw);
-    z-index: 20;
-    border-radius: var(--radius-lg);
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    box-shadow: 0 30px 70px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,0.2);
-    padding: 10px;
-  }
-  .input-card .tag{
-    position: absolute;
-    top: -13px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--g1), var(--g3));
-    color: #1a0f16;
-    font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 999px;
-    white-space: nowrap;
-    box-shadow: 0 6px 16px -4px rgba(240,67,207,0.5);
-  }
-  .input-card .frame{
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-  .input-card figcaption{
-    margin-top: 10px;
-    text-align: center;
-    font-size: 0.72rem;
-    color: var(--muted-2);
-  }
-
-  .mini-card{
-    position: absolute;
-    width: 158px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: 0 18px 40px -16px rgba(0,0,0,0.65);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, z-index 0s;
-  }
-  .mini-card:hover{
-    transform: var(--hover-transform, translateY(-6px)) !important;
-    box-shadow: 0 26px 54px -14px rgba(0,0,0,0.75);
-    z-index: 30 !important;
-  }
-  .mini-card .mini-frame{ display: block; width: 100%; height: auto; }
-  .mini-chip{
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    padding: 4px 8px;
-    border-radius: 999px;
-    background: rgba(10,10,12,0.72);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.14);
-    color: #fff;
-    white-space: nowrap;
-  }
-  .mini-chip .dot{
-    width: 6px; height: 6px; border-radius: 50%; flex: none;
-  }
 
   /* fanned positions - desktop */
   #card-1{ top: 2%;  left: 2%;  transform: rotate(-9deg); }
@@ -347,32 +204,6 @@
   #card-6{ --hover-transform: translateY(-6px) rotate(-7deg); }
   #card-7{ --hover-transform: translateY(-6px) rotate(5deg); }
   #card-8{ --hover-transform: translateY(-6px) rotate(-10deg); }
-
-  @media (max-width: 1039px){
-    .wall{ min-height: 0; margin-top: 8px; }
-    .wall-inner{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 14px;
-      position: static;
-    }
-    .input-card{
-      position: static;
-      transform: none;
-      grid-column: 1 / -1;
-      width: min(280px, 70vw);
-      margin: 0 auto 6px;
-    }
-    .mini-card{
-      position: static;
-      width: 100%;
-      transform: none !important;
-    }
-    .mini-card:hover{ transform: translateY(-3px) !important; }
-  }
-  @media (max-width: 520px){
-    .wall-inner{ grid-template-columns: 1fr 1fr; gap: 10px; }
-  }
 
   /* ---------- Section shell ---------- */
   section{ padding-block: clamp(56px, 8vw, 104px); }
@@ -511,70 +342,8 @@
     font-size: 0.92rem;
     line-height: 1.58;
   }
-  .mini-mock{
-    margin-top: auto;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
 
-  /* ---------- Gallery section (filter grid) ---------- */
-  .filter-bar{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-  .filter-btn{
-    font-family: inherit;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 8px 15px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .filter-btn:hover{ color: var(--fg); border-color: var(--line-strong); }
-  .filter-btn.active{
-    color: #150a12;
-    background: linear-gradient(90deg, var(--g1), var(--g3));
-    border-color: transparent;
-  }
-
-  .gallery-grid{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
-    gap: 18px;
-  }
-  @media (max-width: 1080px){ .gallery-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
-  @media (max-width: 780px){ .gallery-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-  @media (max-width: 500px){ .gallery-grid{ grid-template-columns: 1fr; } }
-
-  .gallery-item{
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: transform 0.25s ease, border-color 0.25s ease, opacity 0.2s ease;
-  }
-  .gallery-item:hover{ transform: translateY(-4px); border-color: var(--line-strong); }
-  .gallery-item.hidden-item{ display: none; }
-  .gallery-item .thumb{ display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
-  .gallery-item .meta{
-    padding: 12px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-  }
-  .gallery-item .meta .name{ font-size: 0.85rem; font-weight: 700; }
-  .gallery-item .meta .preset{ font-size: 0.72rem; color: var(--muted-2); }
-  .gallery-item .model-dot{ width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  .gallery-item .meta-left{ display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .gallery-item .meta-left .name{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  
 
   /* ---------- Presets ---------- */
   .presets{
@@ -633,11 +402,6 @@
   }
   footer .foot-links a{ color: var(--muted); text-decoration: none; }
   footer .foot-links a:hover{ color: var(--fg); }
-  .foot-note{
-    font-size: 0.78rem;
-    color: var(--muted-2);
-    margin-top: 18px;
-  }
 
   .visually-hidden{
     position: absolute;
@@ -667,6 +431,11 @@
   .nav-cta:hover{ border-color: var(--violet); background: var(--violet-soft); }
   .nav-cta svg{ width:18px; height:18px; }
   @media (max-width: 720px){ .nav-links{ display:none; } }
+
+  /* ---------- Screenshots ---------- */
+  .shot{ border:1px solid var(--line-strong); border-radius:var(--radius-lg); overflow:hidden;
+    background:var(--surface); box-shadow:0 40px 90px -34px rgba(0,0,0,0.85); }
+  .shot img{ display:block; width:100%; height:auto; }
 </style>
 </head>
 <body>
@@ -708,188 +477,9 @@
         </div>
       </div>
 
-      <div class="wall" aria-label="Eight sample reimaginings generated from one input screenshot, each by a different model and preset">
-        <div class="wall-inner">
-
-          <!-- INPUT CARD -->
-          <figure class="input-card">
-            <span class="tag">Input · 1 screenshot</span>
-            <div class="frame">
-              <svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Original dashboard screenshot: a plain grey admin panel with a sidebar, a data table, and a bar chart">
-                <rect width="220" height="150" fill="#e7e7ea"/>
-                <rect width="54" height="150" fill="#d3d3d8"/>
-                <rect x="12" y="14" width="30" height="8" rx="2" fill="#9b9ba3"/>
-                <rect x="12" y="34" width="34" height="6" rx="2" fill="#aeaeb6"/>
-                <rect x="12" y="48" width="34" height="6" rx="2" fill="#aeaeb6"/>
-                <rect x="12" y="62" width="34" height="6" rx="2" fill="#aeaeb6"/>
-                <rect x="12" y="76" width="34" height="6" rx="2" fill="#aeaeb6"/>
-                <rect x="66" y="12" width="90" height="10" rx="2" fill="#78787f"/>
-                <rect x="176" y="12" width="32" height="14" rx="3" fill="#b7b7bf"/>
-                <rect x="66" y="32" width="142" height="42" rx="3" fill="#ffffff" stroke="#cfcfd4"/>
-                <rect x="74" y="40" width="60" height="5" fill="#c7c7cd"/>
-                <rect x="74" y="52" width="90" height="5" fill="#dadadf"/>
-                <rect x="74" y="62" width="70" height="5" fill="#dadadf"/>
-                <rect x="66" y="80" width="142" height="58" rx="3" fill="#ffffff" stroke="#cfcfd4"/>
-                <rect x="76" y="118" width="14" height="12" fill="#b7b7bf"/>
-                <rect x="96" y="104" width="14" height="26" fill="#b7b7bf"/>
-                <rect x="116" y="94" width="14" height="36" fill="#9b9ba3"/>
-                <rect x="136" y="110" width="14" height="20" fill="#b7b7bf"/>
-                <rect x="156" y="100" width="14" height="30" fill="#b7b7bf"/>
-                <rect x="176" y="88" width="14" height="42" fill="#9b9ba3"/>
-              </svg>
-            </div>
-            <figcaption>admin-dashboard.png</figcaption>
-          </figure>
-
-          <!-- MINI CARD 1 -->
-          <a class="mini-card" id="card-1" href="#gallery" aria-label="Reimagined variation by Claude, dark editorial style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#141018"/>
-              <rect x="0" y="0" width="46" height="108" fill="#1c1622"/>
-              <circle cx="23" cy="18" r="6" fill="#f043cf"/>
-              <rect x="10" y="36" width="26" height="4" rx="2" fill="#3a3040"/>
-              <rect x="10" y="46" width="26" height="4" rx="2" fill="#f88297"/>
-              <rect x="10" y="56" width="26" height="4" rx="2" fill="#3a3040"/>
-              <rect x="54" y="12" width="70" height="8" rx="2" fill="#f5f0f8"/>
-              <rect x="54" y="30" width="96" height="30" rx="6" fill="#221b28"/>
-              <rect x="62" y="38" width="50" height="4" fill="#f88297"/>
-              <rect x="62" y="46" width="70" height="4" fill="#5a4d64"/>
-              <rect x="54" y="66" width="46" height="34" rx="6" fill="#221b28"/>
-              <rect x="104" y="66" width="46" height="34" rx="6" fill="#221b28"/>
-              <path d="M62 92 L70 80 L78 86 L90 70" stroke="#ffc160" stroke-width="2" fill="none"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#f043cf"></span> Claude</span>
-          </a>
-
-          <!-- MINI CARD 2 -->
-          <a class="mini-card" id="card-2" href="#gallery" aria-label="Reimagined variation by GPT, clean light minimalist style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#fbfbfc"/>
-              <rect x="0" y="0" width="158" height="26" fill="#ffffff"/>
-              <rect x="12" y="10" width="18" height="6" rx="3" fill="#111"/>
-              <rect x="118" y="9" width="28" height="8" rx="4" fill="#111"/>
-              <rect x="12" y="38" width="134" height="24" rx="4" fill="#f1f1f3"/>
-              <rect x="20" y="46" width="60" height="4" fill="#111"/>
-              <rect x="20" y="53" width="90" height="4" fill="#9a9aa0"/>
-              <rect x="12" y="68" width="42" height="30" rx="4" fill="#ffffff" stroke="#e3e3e6"/>
-              <rect x="58" y="68" width="42" height="30" rx="4" fill="#ffffff" stroke="#e3e3e6"/>
-              <rect x="104" y="68" width="42" height="30" rx="4" fill="#111111"/>
-              <rect x="20" y="76" width="26" height="4" fill="#111"/>
-              <rect x="66" y="76" width="26" height="4" fill="#111"/>
-              <rect x="112" y="76" width="26" height="4" fill="#fff"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#10a37f"></span> GPT</span>
-          </a>
-
-          <!-- MINI CARD 3 -->
-          <a class="mini-card" id="card-3" href="#gallery" aria-label="Reimagined variation by Gemini, colorful Material 3 style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#eef1fb"/>
-              <rect x="10" y="10" width="138" height="20" rx="10" fill="#4b5cf0"/>
-              <circle cx="22" cy="20" r="5" fill="#fff"/>
-              <rect x="34" y="16" width="50" height="8" rx="4" fill="#fff"/>
-              <rect x="10" y="38" width="66" height="58" rx="14" fill="#ffffff"/>
-              <circle cx="43" cy="60" r="14" fill="#ffd54b"/>
-              <rect x="20" y="82" width="46" height="6" rx="3" fill="#c6cbe6"/>
-              <rect x="82" y="38" width="66" height="27" rx="12" fill="#ff6d8f"/>
-              <rect x="82" y="69" width="66" height="27" rx="12" fill="#38c793"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#4b5cf0"></span> Gemini</span>
-          </a>
-
-          <!-- MINI CARD 4 -->
-          <a class="mini-card" id="card-4" href="#gallery" aria-label="Reimagined variation by DeepSeek, terminal-inspired style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#08110c"/>
-              <rect x="8" y="8" width="142" height="92" rx="6" fill="#0d1a12" stroke="#1c3b28"/>
-              <circle cx="20" cy="18" r="2.4" fill="#39e07a"/>
-              <circle cx="28" cy="18" r="2.4" fill="#2a2"/>
-              <rect x="16" y="30" width="90" height="5" fill="#39e07a"/>
-              <rect x="16" y="42" width="120" height="4" fill="#1f5f39"/>
-              <rect x="16" y="50" width="70" height="4" fill="#1f5f39"/>
-              <rect x="16" y="64" width="126" height="26" rx="3" fill="#0a1710" stroke="#1c3b28"/>
-              <rect x="24" y="72" width="40" height="4" fill="#39e07a"/>
-              <rect x="24" y="80" width="90" height="4" fill="#175030"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#39e07a"></span> DeepSeek</span>
-          </a>
-
-          <!-- MINI CARD 5 -->
-          <a class="mini-card" id="card-5" href="#gallery" aria-label="Reimagined variation by Qwen, warm approachable style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#fff6ec"/>
-              <rect x="0" y="0" width="158" height="108" fill="#fff6ec"/>
-              <circle cx="140" cy="12" r="26" fill="#ffdca8" opacity="0.6"/>
-              <rect x="14" y="16" width="80" height="10" rx="5" fill="#7a4a20"/>
-              <rect x="14" y="36" width="130" height="24" rx="12" fill="#ffffff" stroke="#f0dcc0"/>
-              <circle cx="28" cy="48" r="8" fill="#ff9a5a"/>
-              <rect x="42" y="44" width="80" height="4" fill="#b98a54"/>
-              <rect x="42" y="52" width="60" height="4" fill="#e2c49a"/>
-              <rect x="14" y="68" width="60" height="26" rx="12" fill="#ff9a5a"/>
-              <rect x="80" y="68" width="64" height="26" rx="12" fill="#ffffff" stroke="#f0dcc0"/>
-              <rect x="30" y="79" width="28" height="4" fill="#fff"/>
-              <rect x="96" y="79" width="32" height="4" fill="#b98a54"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#ff9a5a"></span> Qwen</span>
-          </a>
-
-          <!-- MINI CARD 6 -->
-          <a class="mini-card" id="card-6" href="#gallery" aria-label="Reimagined variation by GPT, brutalist high-contrast style">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#fefefe"/>
-              <rect x="0" y="0" width="158" height="108" fill="#fefefe" stroke="#111" stroke-width="4"/>
-              <rect x="10" y="10" width="70" height="16" fill="#111"/>
-              <rect x="90" y="10" width="58" height="16" fill="#ffe600"/>
-              <rect x="10" y="34" width="138" height="4" fill="#111"/>
-              <rect x="10" y="46" width="64" height="46" fill="#ffe600" stroke="#111" stroke-width="3"/>
-              <rect x="82" y="46" width="66" height="46" fill="#111"/>
-              <rect x="92" y="56" width="46" height="6" fill="#ffe600"/>
-              <rect x="92" y="68" width="30" height="6" fill="#fff"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#10a37f"></span> GPT</span>
-          </a>
-
-          <!-- MINI CARD 7 -->
-          <a class="mini-card" id="card-7" href="#gallery" aria-label="Reimagined variation, glassy gradient style, Claude">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="mcg7" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#3a2a6b"/>
-                  <stop offset="1" stop-color="#7a3d8f"/>
-                </linearGradient>
-              </defs>
-              <rect width="158" height="108" fill="url(#mcg7)"/>
-              <rect x="14" y="14" width="130" height="20" rx="10" fill="rgba(255,255,255,0.14)"/>
-              <rect x="22" y="20" width="50" height="6" rx="3" fill="#fff"/>
-              <rect x="14" y="42" width="62" height="52" rx="12" fill="rgba(255,255,255,0.12)"/>
-              <rect x="82" y="42" width="62" height="52" rx="12" fill="rgba(255,255,255,0.18)"/>
-              <circle cx="45" cy="60" r="10" fill="#ffc160"/>
-              <rect x="24" y="76" width="42" height="5" rx="2" fill="rgba(255,255,255,0.7)"/>
-              <rect x="92" y="54" width="42" height="5" rx="2" fill="#fff"/>
-              <rect x="92" y="64" width="34" height="5" rx="2" fill="rgba(255,255,255,0.6)"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#a855f7"></span> Claude</span>
-          </a>
-
-          <!-- MINI CARD 8 -->
-          <a class="mini-card" id="card-8" href="#gallery" aria-label="Reimagined variation, accessible high-contrast style, Gemini">
-            <svg class="mini-frame" viewBox="0 0 158 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="158" height="108" fill="#0b1220"/>
-              <rect x="10" y="10" width="138" height="16" rx="4" fill="#132038"/>
-              <rect x="18" y="15" width="46" height="6" rx="3" fill="#7dd3fc"/>
-              <rect x="10" y="34" width="66" height="60" rx="6" fill="#132038"/>
-              <rect x="86" y="34" width="62" height="28" rx="6" fill="#132038"/>
-              <rect x="86" y="66" width="62" height="28" rx="6" fill="#132038"/>
-              <rect x="18" y="44" width="50" height="6" fill="#e7f2ff"/>
-              <rect x="18" y="56" width="50" height="6" fill="#7dd3fc"/>
-              <rect x="18" y="68" width="34" height="6" fill="#e7f2ff"/>
-              <rect x="94" y="44" width="46" height="6" fill="#7dd3fc"/>
-              <rect x="94" y="76" width="46" height="6" fill="#e7f2ff"/>
-            </svg>
-            <span class="mini-chip"><span class="dot" style="background:#7dd3fc"></span> Gemini</span>
-          </a>
-
-        </div>
+      <div class="shot hero-shot">
+        <img src="/shots/app.png" width="1600" height="689" loading="eager" decoding="async"
+             alt="The RēDesign control panel: drop in a screenshot, choose models and prompt presets, then hit Run reimagine." />
       </div>
 
     </div>
@@ -1045,185 +635,14 @@
   <section id="gallery">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The wall, in full</p>
-        <h2>One admin dashboard. Eight directions.</h2>
-        <p>All eight came from a single run on the screenshot above. Filter by model to compare.</p>
+        <p class="eyebrow">The wall, for real</p>
+        <h2>One screenshot in. A dozen real redesigns out.</h2>
+        <p>Straight from the viewer, on a real run of the dashboard above. Every result sits next to the original, tagged by model, preset, and what it cost.</p>
       </div>
 
-      <div class="filter-bar" role="group" aria-label="Filter gallery by model">
-        <button class="filter-btn active" data-filter="all" type="button">All</button>
-        <button class="filter-btn" data-filter="claude" type="button">Claude</button>
-        <button class="filter-btn" data-filter="gpt" type="button">GPT</button>
-        <button class="filter-btn" data-filter="gemini" type="button">Gemini</button>
-        <button class="filter-btn" data-filter="deepseek" type="button">DeepSeek</button>
-        <button class="filter-btn" data-filter="qwen" type="button">Qwen</button>
-      </div>
-
-      <div class="gallery-grid" id="galleryGrid">
-
-        <div class="gallery-item" data-model="claude">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#141018"/>
-            <rect x="0" y="0" width="60" height="140" fill="#1c1622"/>
-            <circle cx="30" cy="24" r="7" fill="#f043cf"/>
-            <rect x="14" y="46" width="34" height="5" rx="2" fill="#3a3040"/>
-            <rect x="14" y="58" width="34" height="5" rx="2" fill="#f88297"/>
-            <rect x="14" y="70" width="34" height="5" rx="2" fill="#3a3040"/>
-            <rect x="72" y="16" width="94" height="10" rx="3" fill="#f5f0f8"/>
-            <rect x="72" y="40" width="132" height="36" rx="8" fill="#221b28"/>
-            <rect x="82" y="50" width="60" height="5" fill="#f88297"/>
-            <rect x="82" y="60" width="90" height="5" fill="#5a4d64"/>
-            <rect x="72" y="84" width="62" height="46" rx="8" fill="#221b28"/>
-            <rect x="142" y="84" width="62" height="46" rx="8" fill="#221b28"/>
-            <path d="M82 116 L92 100 L102 108 L118 86" stroke="#ffc160" stroke-width="2.4" fill="none"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#f043cf"></span><span class="name">Claude</span></div>
-            <span class="preset">Bold Reimagine</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="gpt">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#fbfbfc"/>
-            <rect x="0" y="0" width="220" height="32" fill="#ffffff"/>
-            <rect x="16" y="12" width="22" height="8" rx="4" fill="#111"/>
-            <rect x="164" y="10" width="40" height="12" rx="6" fill="#111"/>
-            <rect x="16" y="48" width="188" height="30" rx="5" fill="#f1f1f3"/>
-            <rect x="26" y="58" width="80" height="5" fill="#111"/>
-            <rect x="26" y="67" width="120" height="5" fill="#9a9aa0"/>
-            <rect x="16" y="90" width="58" height="38" rx="5" fill="#ffffff" stroke="#e3e3e6"/>
-            <rect x="81" y="90" width="58" height="38" rx="5" fill="#ffffff" stroke="#e3e3e6"/>
-            <rect x="146" y="90" width="58" height="38" rx="5" fill="#111111"/>
-            <rect x="26" y="102" width="36" height="5" fill="#111"/>
-            <rect x="91" y="102" width="36" height="5" fill="#111"/>
-            <rect x="156" y="102" width="36" height="5" fill="#fff"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#10a37f"></span><span class="name">GPT</span></div>
-            <span class="preset">Minimalist</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="gemini">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#eef1fb"/>
-            <rect x="14" y="14" width="192" height="26" rx="13" fill="#4b5cf0"/>
-            <circle cx="32" cy="27" r="7" fill="#fff"/>
-            <rect x="48" y="21" width="70" height="10" rx="5" fill="#fff"/>
-            <rect x="14" y="50" width="92" height="76" rx="18" fill="#ffffff"/>
-            <circle cx="60" cy="82" r="18" fill="#ffd54b"/>
-            <rect x="28" y="112" width="64" height="8" rx="4" fill="#c6cbe6"/>
-            <rect x="114" y="50" width="92" height="36" rx="16" fill="#ff6d8f"/>
-            <rect x="114" y="90" width="92" height="36" rx="16" fill="#38c793"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#4b5cf0"></span><span class="name">Gemini</span></div>
-            <span class="preset">Material 3</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="deepseek">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#08110c"/>
-            <rect x="10" y="10" width="200" height="120" rx="8" fill="#0d1a12" stroke="#1c3b28"/>
-            <circle cx="26" cy="24" r="3" fill="#39e07a"/>
-            <circle cx="38" cy="24" r="3" fill="#2a2"/>
-            <rect x="22" y="42" width="120" height="7" fill="#39e07a"/>
-            <rect x="22" y="58" width="160" height="5" fill="#1f5f39"/>
-            <rect x="22" y="68" width="94" height="5" fill="#1f5f39"/>
-            <rect x="22" y="86" width="168" height="34" rx="4" fill="#0a1710" stroke="#1c3b28"/>
-            <rect x="32" y="98" width="54" height="5" fill="#39e07a"/>
-            <rect x="32" y="108" width="120" height="5" fill="#175030"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#39e07a"></span><span class="name">DeepSeek</span></div>
-            <span class="preset">Faithful Refresh</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="qwen">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#fff6ec"/>
-            <circle cx="196" cy="16" r="34" fill="#ffdca8" opacity="0.6"/>
-            <rect x="18" y="20" width="110" height="13" rx="6" fill="#7a4a20"/>
-            <rect x="18" y="46" width="182" height="32" rx="16" fill="#ffffff" stroke="#f0dcc0"/>
-            <circle cx="38" cy="62" r="11" fill="#ff9a5a"/>
-            <rect x="58" y="56" width="110" height="5" fill="#b98a54"/>
-            <rect x="58" y="66" width="80" height="5" fill="#e2c49a"/>
-            <rect x="18" y="88" width="84" height="34" rx="16" fill="#ff9a5a"/>
-            <rect x="112" y="88" width="88" height="34" rx="16" fill="#ffffff" stroke="#f0dcc0"/>
-            <rect x="40" y="102" width="40" height="5" fill="#fff"/>
-            <rect x="134" y="102" width="44" height="5" fill="#b98a54"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#ff9a5a"></span><span class="name">Qwen</span></div>
-            <span class="preset">Approachable</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="gemini">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#0b1220"/>
-            <rect x="14" y="14" width="192" height="20" rx="5" fill="#132038"/>
-            <rect x="26" y="20" width="64" height="8" rx="4" fill="#7dd3fc"/>
-            <rect x="14" y="44" width="92" height="80" rx="7" fill="#132038"/>
-            <rect x="114" y="44" width="92" height="36" rx="7" fill="#132038"/>
-            <rect x="114" y="88" width="92" height="36" rx="7" fill="#132038"/>
-            <rect x="26" y="58" width="68" height="7" fill="#e7f2ff"/>
-            <rect x="26" y="74" width="68" height="7" fill="#7dd3fc"/>
-            <rect x="26" y="90" width="46" height="7" fill="#e7f2ff"/>
-            <rect x="126" y="58" width="64" height="7" fill="#7dd3fc"/>
-            <rect x="126" y="102" width="64" height="7" fill="#e7f2ff"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#7dd3fc"></span><span class="name">Gemini</span></div>
-            <span class="preset">Clarity &amp; Accessibility</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="claude">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="galg1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#3a2a6b"/>
-                <stop offset="1" stop-color="#7a3d8f"/>
-              </linearGradient>
-            </defs>
-            <rect width="220" height="140" fill="url(#galg1)"/>
-            <rect x="18" y="18" width="184" height="26" rx="13" fill="rgba(255,255,255,0.14)"/>
-            <rect x="30" y="26" width="70" height="8" rx="4" fill="#fff"/>
-            <rect x="18" y="56" width="86" height="68" rx="14" fill="rgba(255,255,255,0.12)"/>
-            <rect x="114" y="56" width="88" height="68" rx="14" fill="rgba(255,255,255,0.18)"/>
-            <circle cx="61" cy="82" r="14" fill="#ffc160"/>
-            <rect x="32" y="104" width="58" height="6" rx="3" fill="rgba(255,255,255,0.7)"/>
-            <rect x="128" y="72" width="58" height="6" rx="3" fill="#fff"/>
-            <rect x="128" y="86" width="46" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#f043cf"></span><span class="name">Claude</span></div>
-            <span class="preset">Playful</span>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-model="gpt">
-          <svg class="thumb" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="220" height="140" fill="#fefefe"/>
-            <rect x="4" y="4" width="212" height="132" fill="none" stroke="#111" stroke-width="5"/>
-            <rect x="16" y="16" width="94" height="22" fill="#111"/>
-            <rect x="122" y="16" width="82" height="22" fill="#ffe600"/>
-            <rect x="16" y="48" width="188" height="6" fill="#111"/>
-            <rect x="16" y="64" width="90" height="60" fill="#ffe600" stroke="#111" stroke-width="4"/>
-            <rect x="114" y="64" width="90" height="60" fill="#111"/>
-            <rect x="128" y="80" width="60" height="8" fill="#ffe600"/>
-            <rect x="128" y="98" width="40" height="8" fill="#fff"/>
-          </svg>
-          <div class="meta">
-            <div class="meta-left"><span class="model-dot" style="background:#10a37f"></span><span class="name">GPT</span></div>
-            <span class="preset">Conversion</span>
-          </div>
-        </div>
-
+      <div class="shot">
+        <img src="/shots/viewer.png" width="1600" height="1689" loading="lazy" decoding="async"
+             alt="The RēDesign viewer: the original dashboard beside real redesigns from Claude and GPT across three prompt presets, each labeled with model, preset, and cost." />
       </div>
     </div>
   </section>
@@ -1297,24 +716,6 @@
   </div>
 </footer>
 
-<script>
-  (function(){
-    var buttons = document.querySelectorAll('.filter-btn');
-    var items = document.querySelectorAll('.gallery-item');
-    buttons.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        buttons.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed','true');
-        var filter = btn.getAttribute('data-filter');
-        items.forEach(function(item){
-          var match = filter === 'all' || item.getAttribute('data-model') === filter;
-          item.classList.toggle('hidden-item', !match);
-        });
-      });
-    });
-  })();
-</script>
 
 </body>
 </html>
