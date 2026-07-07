@@ -4,6 +4,15 @@ All notable changes to the RēDesign landing page are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.1] - 2026-07-06
+
+### Changed
+- Tightened the desktop hero: the fanned sample cards now hug the input screenshot instead of floating far above and below it.
+- Rebuilt the mobile hero as a story you can read top to bottom: the input screenshot, a "every model sends back its own redesign" connector, one labeled sample card per model, and a link that jumps to the real results in the gallery. The four duplicate cards stay desktop-only.
+
+### Fixed
+- On mobile, the little model chips were anchored to the page instead of their own cards, so they all piled up in one spot near the bottom of the hero.
+
 ## [1.2.0] - 2026-07-06
 
 ### Changed

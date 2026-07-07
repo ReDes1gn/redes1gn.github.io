@@ -240,7 +240,7 @@
   /* ---------- Gallery wall (hero visual) ---------- */
   .wall{
     position: relative;
-    min-height: clamp(420px, 52vw, 620px);
+    min-height: clamp(400px, 46vw, 560px);
   }
   .wall-inner{
     position: relative;
@@ -330,14 +330,14 @@
   }
 
   /* fanned positions - desktop */
-  #card-1{ top: 2%;  left: 2%;  transform: rotate(-9deg); }
-  #card-2{ top: -2%; left: 30%; transform: rotate(6deg); z-index: 12;}
-  #card-3{ top: 4%;  right: 26%;transform: rotate(-5deg); z-index: 12;}
-  #card-4{ top: -1%; right: 0%; transform: rotate(10deg); }
-  #card-5{ bottom: 6%; left: -1%; transform: rotate(8deg); }
-  #card-6{ bottom: -3%; left: 27%; transform: rotate(-7deg); z-index: 11; }
-  #card-7{ bottom: -1%; right: 24%; transform: rotate(5deg); z-index: 11; }
-  #card-8{ bottom: 8%; right: -1%; transform: rotate(-10deg); }
+  #card-1{ top: 9%;  left: 2%;  transform: rotate(-9deg); }
+  #card-2{ top: 5%;  left: 30%; transform: rotate(6deg); z-index: 12;}
+  #card-3{ top: 10%; right: 26%;transform: rotate(-5deg); z-index: 12;}
+  #card-4{ top: 6%;  right: 0%; transform: rotate(10deg); }
+  #card-5{ bottom: 13%; left: -1%; transform: rotate(8deg); }
+  #card-6{ bottom: 5%;  left: 27%; transform: rotate(-7deg); z-index: 11; }
+  #card-7{ bottom: 6%;  right: 24%; transform: rotate(5deg); z-index: 11; }
+  #card-8{ bottom: 14%; right: -1%; transform: rotate(-10deg); }
 
   #card-1{ --hover-transform: translateY(-6px) rotate(-9deg); }
   #card-2{ --hover-transform: translateY(-6px) rotate(6deg); }
@@ -348,6 +348,9 @@
   #card-7{ --hover-transform: translateY(-6px) rotate(5deg); }
   #card-8{ --hover-transform: translateY(-6px) rotate(-10deg); }
 
+  /* mobile-only flow helpers, hidden on desktop */
+  .flow-arrow, .wall-more{ display: none; }
+
   @media (max-width: 1039px){
     .wall{ min-height: 0; margin-top: 8px; }
     .wall-inner{
@@ -357,18 +360,51 @@
       position: static;
     }
     .input-card{
-      position: static;
+      /* relative so its floating tag anchors to the card itself */
+      position: relative;
+      inset: auto;
       transform: none;
       grid-column: 1 / -1;
       width: min(280px, 70vw);
-      margin: 0 auto 6px;
+      margin: 6px auto 6px;
     }
     .mini-card{
-      position: static;
+      /* relative, not static: the model chip inside is absolutely positioned
+         and must anchor to its own card, not to the wall */
+      position: relative;
       width: 100%;
       transform: none !important;
     }
+    /* id-level reset so the desktop fan offsets (#card-N left/right/top/bottom) lose */
+    #card-1, #card-2, #card-3, #card-4, #card-5, #card-6, #card-7, #card-8{ inset: auto; }
     .mini-card:hover{ transform: translateY(-3px) !important; }
+
+    /* tell the one-in, many-out story instead of dumping nine equal cards */
+    .flow-arrow{
+      display: flex;
+      grid-column: 1 / -1;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin: 2px 0 4px;
+      color: var(--muted);
+      font-size: 0.87rem;
+      font-weight: 600;
+    }
+    .flow-arrow svg{ width: 17px; height: 17px; flex: none; stroke: var(--violet); }
+    .wall-more{
+      display: block;
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--violet);
+      text-decoration: none;
+    }
+    .wall-more:hover{ text-decoration: underline; }
+    /* one sample per model on small screens; the rest stay desktop-only */
+    #card-4, #card-6, #card-7, #card-8{ display: none; }
   }
   @media (max-width: 520px){
     .wall-inner{ grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -715,7 +751,7 @@
         </div>
       </div>
 
-      <div class="wall" aria-label="Eight sample reimaginings generated from one input screenshot, each by a different model and preset">
+      <div class="wall" aria-label="Sample reimaginings generated from one input screenshot, each by a different model and preset">
         <div class="wall-inner">
 
           <!-- INPUT CARD -->
@@ -747,6 +783,12 @@
             </div>
             <figcaption>admin-dashboard.png</figcaption>
           </figure>
+
+          <!-- mobile-only: the one-in, many-out connector -->
+          <div class="flow-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 12l6 7 6-7"/></svg>
+            <span>every model sends back its own redesign</span>
+          </div>
 
           <!-- MINI CARD 1 -->
           <a class="mini-card" id="card-1" href="#gallery" aria-label="Reimagined variation by Claude, dark editorial style">
@@ -895,6 +937,9 @@
             </svg>
             <span class="mini-chip"><span class="dot" style="background:#7dd3fc"></span> Gemini</span>
           </a>
+
+          <!-- mobile-only: jump to the real outputs -->
+          <a class="wall-more" href="#gallery">These are samples. See eight real results</a>
 
         </div>
       </div>
