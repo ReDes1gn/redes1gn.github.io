@@ -4,6 +4,11 @@ All notable changes to the RēDesign landing page are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [1.2.3] - 2026-07-06
+
+### Added
+- The four cards revealed by "Show all eight" (or a model filter) now fade and rise in with a short staggered animation. It runs once and respects reduced-motion preferences.
+
 ## [1.2.2] - 2026-07-06
 
 ### Changed

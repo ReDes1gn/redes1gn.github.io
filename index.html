@@ -627,9 +627,15 @@
     cursor: pointer;
   }
   .gallery-more:hover{ border-color: var(--violet); }
+  @keyframes card-reveal{ from{ opacity: 0; transform: translateY(12px); } to{ opacity: 1; transform: none; } }
   @media (max-width: 700px){
     .gallery-grid.collapsed .gallery-item:nth-child(n+5){ display: none; }
     .gallery-grid.collapsed + .gallery-more{ display: block; }
+    /* fade the last four in when the grid is expanded on demand */
+    .gallery-grid.revealed .gallery-item:nth-child(5){ animation: card-reveal 0.45s ease both; }
+    .gallery-grid.revealed .gallery-item:nth-child(6){ animation: card-reveal 0.45s ease 0.06s both; }
+    .gallery-grid.revealed .gallery-item:nth-child(7){ animation: card-reveal 0.45s ease 0.12s both; }
+    .gallery-grid.revealed .gallery-item:nth-child(8){ animation: card-reveal 0.45s ease 0.18s both; }
   }
 
   /* ---------- Presets ---------- */
@@ -1292,8 +1298,12 @@
     var grid = document.getElementById('galleryGrid');
     var more = document.querySelector('.gallery-more');
     function expand(){
+      if (!grid.classList.contains('collapsed')) return;
       grid.classList.remove('collapsed');
+      grid.classList.add('revealed');
       if (more) more.setAttribute('aria-expanded','true');
+      // drop the class once the fade is done so later filtering never re-animates
+      setTimeout(function(){ grid.classList.remove('revealed'); }, 800);
     }
     if (more) more.addEventListener('click', expand);
     buttons.forEach(function(btn){
