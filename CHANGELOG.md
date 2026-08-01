@@ -102,7 +102,7 @@ independent judging passes on first impression, craft, and product storytelling;
 
 ## [1.0.0] - 2026-07-06
 
-First public release, live at https://redes1gn.github.io/.
+First public release, live at https://redesign.lunarwerx.com/.
 
 ### Added
 - Single self-contained `index.html`: sticky nav, a hero with a fanned "gallery wall" of sample redesigns, a how-it-works walkthrough, the models and prompt presets, a features grid, a filterable gallery, and a footer.

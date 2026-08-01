@@ -2,7 +2,7 @@
 
 **One screenshot in. A wall of AI redesigns out.**
 
-The public landing page for RēDesign, live at **[redes1gn.github.io](https://redes1gn.github.io/)**.
+The public landing page for RēDesign, live at **[redesign.lunarwerx.com](https://redesign.lunarwerx.com/)**.
 
 ![RēDesign share card](og-image.png)
 
@@ -14,7 +14,7 @@ This repository is just the marketing site for it. The whole thing is one self-c
 
 ## Live site
 
-> **https://redes1gn.github.io/**
+> **https://redesign.lunarwerx.com/**
 
 ## How it is built
 
