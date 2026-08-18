@@ -902,6 +902,121 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
         })(window, document, 'ak_2e3fb53a5d0ab47dfa54db7ace6612a86fcc');
     </script>
     <!-- End ARGUS Analytics Pixel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://redesign.lunarwerx.com/#app",
+      "name": "RēDesign",
+      "description": "Drop in one UI screenshot and RēDesign runs it past Claude, GPT, Gemini and more at once, then lines up every redesign next to the original so you can compare.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, Linux, macOS (Apple silicon)",
+      "url": "https://redesign.lunarwerx.com/",
+      "downloadUrl": "https://github.com/LunarWerxs/ReDesign/releases/latest",
+      "softwareHelp": {
+        "@type": "CreativeWork",
+        "url": "https://github.com/LunarWerxs/ReDesign"
+      },
+      "image": "https://redesign.lunarwerx.com/og-image.png",
+      "featureList": [
+        "Every major model at once",
+        "Side-by-side viewer",
+        "Reference images",
+        "Self-healing keys",
+        "Sandboxed rendering",
+        "Runs locally",
+        "Reproducible and scriptable"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://lunarwerx.com/#org"
+      },
+      "publisher": {
+        "@id": "https://lunarwerx.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lunarwerx.com/#org",
+      "name": "LunarWerx Studios",
+      "url": "https://lunarwerx.com/",
+      "logo": "https://lunarwerx.com/logowhite.webp",
+      "sameAs": [
+        "https://github.com/LunarWerxs"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://redesign.lunarwerx.com/#site",
+      "name": "RēDesign",
+      "url": "https://redesign.lunarwerx.com/",
+      "publisher": {
+        "@id": "https://lunarwerx.com/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://redesign.lunarwerx.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is RēDesign free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, RēDesign is free to download and MIT licensed, with the source on GitHub. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI models does RēDesign support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RēDesign ships with Claude, GPT, Gemini, DeepSeek, and Qwen configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add my own AI model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add any other model, including your own, through a JSON config entry, no code change needed. It works whether the model can see images directly or only handle a text description. Config lives outside the app itself, so pointing it at a newer model version or disabling one doesn't require touching the app's code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RēDesign keep my screenshots and API keys private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RēDesign runs locally on localhost only, and your screenshots and API keys never leave your machine except to the model APIs you chose to use. Each model's generated HTML renders inside a locked-down iframe that cannot reach your data. Your keys are stored in a local, owner-only file and are never written into a run's saved output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What operating systems does RēDesign run on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RēDesign runs on Windows, Linux, and macOS on Apple silicon. On Windows there's a standalone GUI executable with the web app embedded, plus an optional system-tray build. On any supported OS you can instead run it from source with Bun 1.2 or newer, using bun install, a build step, and bun run src/index.ts serve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try RēDesign without spending on AI API calls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="lw-parent" href="https://lunarwerx.com/" aria-label="Back to LunarWerx Studios, the parent studio"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span class="lw-tip" aria-hidden="true"><span>LunarWerx Studios</span><span>Every app we build, in one place</span></span></a>
@@ -1252,6 +1367,48 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
             <li>Dry run &middot; add --mock, costs nothing</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= G. FAQ ================= -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-bar rv"><span class="mlab">Sec. F &middot; FAQ</span></div>
+      <h2 class="sec-title rv">Questions, answered.</h2>
+      <div class="sec-body">
+        <ul class="feats" aria-label="Frequently asked questions">
+          <li class="rv">
+            <span class="fidx">F&middot;1</span>
+            <h3>Is RēDesign free?</h3>
+            <p>Yes, RēDesign is free to download and MIT licensed, with the source on GitHub. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">F&middot;2</span>
+            <h3>Which AI models does RēDesign support?</h3>
+            <p>RēDesign ships with Claude, GPT, Gemini, DeepSeek, and Qwen configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">F&middot;3</span>
+            <h3>Can I add my own AI model?</h3>
+            <p>Yes. Add any other model, including your own, through a JSON config entry, no code change needed. It works whether the model can see images directly or only handle a text description. Config lives outside the app itself, so pointing it at a newer model version or disabling one doesn't require touching the app's code.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">F&middot;4</span>
+            <h3>Does RēDesign keep my screenshots and API keys private?</h3>
+            <p>Yes. RēDesign runs locally on localhost only, and your screenshots and API keys never leave your machine except to the model APIs you chose to use. Each model's generated HTML renders inside a locked-down iframe that cannot reach your data. Your keys are stored in a local, owner-only file and are never written into a run's saved output.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">F&middot;5</span>
+            <h3>What operating systems does RēDesign run on?</h3>
+            <p>RēDesign runs on Windows, Linux, and macOS on Apple silicon. On Windows there's a standalone GUI executable with the web app embedded, plus an optional system-tray build. On any supported OS you can instead run it from source with Bun 1.2 or newer, using bun install, a build step, and bun run src/index.ts serve.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">F&middot;6</span>
+            <h3>Can I try RēDesign without spending on AI API calls?</h3>
+            <p>Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you.</p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

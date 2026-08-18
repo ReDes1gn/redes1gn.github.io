@@ -1,0 +1,21 @@
+# RēDesign
+
+> One screenshot in, a wall of AI redesigns out. RēDesign fires a UI screenshot at Claude, GPT, Gemini, DeepSeek, and Qwen at once, then lines up every result next to the original so you can actually compare them instead of pasting the same image into ten chat tabs.
+
+RēDesign is a control panel that runs on your own machine (Bun + Hono backend, Vue 3 + Vite + Tailwind + shadcn-vue front end) and talks only to the model APIs you give it keys for. Every generated redesign is real, working HTML, rendered in a locked-down iframe so it can look but not touch your data. Adding another model is a JSON config entry, not a code change, and everything in the UI has a CLI twin plus an MCP server so an AI agent can drive it too.
+
+## Key facts
+- Free to download, MIT licensed, source on GitHub.
+- Runs on Windows, Linux, and macOS (Apple silicon); Windows also has a GUI executable with an optional system-tray build.
+- From source: Bun 1.2 or newer (`bun install && npm run build`, `cp .env.example .env`, `bun run src/index.ts serve`), then open 127.0.0.1:5178.
+- Ships with Claude, GPT, Gemini, DeepSeek, and Qwen by default; Claude, GPT, Gemini, and Qwen see the screenshot natively, DeepSeek works from an auto-generated description.
+- Prompt presets: Faithful Refresh, Bold Reimagine, Clarity & Accessibility, Conversion, Minimalist, Material 3, Approachable, Playful, or write your own.
+- Every model fires in parallel on one screenshot; results line up beside the original for side-by-side comparison, filterable by model or preset.
+- Screenshots and API keys never leave your machine except to the model APIs you chose; a dry run with `--mock` costs nothing.
+- Reproducible and scriptable: every run is written to a manifest, with a full CLI twin and an MCP server for agents.
+
+## Links
+- Home: https://redesign.lunarwerx.com/
+- Source code: https://github.com/LunarWerxs/ReDesign
+- Download: https://github.com/LunarWerxs/ReDesign/releases/latest
+- License: MIT
