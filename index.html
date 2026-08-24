@@ -790,6 +790,12 @@
     padding-block: 12px;
   }
   .foot-links a:hover{ color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
+  .foot-fleet{
+    margin-top: 18px; padding-top: 14px;
+    border-top: 1px solid var(--hair);
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    gap: 10px clamp(14px, 2.4vw, 28px);
+  }
   .colophon{
     margin-top: 22px;
     padding-top: 14px;
@@ -913,6 +919,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       "description": "Drop in one UI screenshot and RēDesign runs it past Claude, GPT, Gemini and more at once, then lines up every redesign next to the original so you can compare.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Windows, Linux, macOS (Apple silicon)",
+      "softwareVersion": "1.6.6",
       "url": "https://redesign.lunarwerx.com/",
       "downloadUrl": "https://github.com/LunarWerxs/ReDesign/releases/latest",
       "softwareHelp": {
@@ -961,6 +968,24 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       }
     },
     {
+      "@type": "BreadcrumbList",
+      "@id": "https://redesign.lunarwerx.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "LunarWerx Studios",
+          "item": "https://lunarwerx.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "RēDesign",
+          "item": "https://redesign.lunarwerx.com/"
+        }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://redesign.lunarwerx.com/#faq",
       "mainEntity": [
@@ -977,7 +1002,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
           "name": "Which AI models does RēDesign support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "RēDesign ships with Claude, GPT, Gemini, DeepSeek, and Qwen configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required."
+            "text": "RēDesign ships with Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required."
           }
         },
         {
@@ -1010,6 +1035,22 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RēDesign work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The control panel itself runs entirely on localhost, no cloud account needed. Generating a real redesign needs internet access, though, since that step calls out to whichever AI provider APIs you've configured. A --mock dry run skips those calls entirely, so you can exercise the full flow without depending on any model being reachable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is RēDesign different from just asking ChatGPT or Claude directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chatting with one model directly gives you one model's take per conversation, and comparing another means opening a new tab and re-pasting the screenshot. RēDesign fires the same screenshot at ten models in parallel by default, then lines every result up beside the original as real, working HTML you can open, filter, and click through, not just a chat reply."
           }
         }
       ]
@@ -1066,7 +1107,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
 
     <div class="wrap hero-low">
       <div>
-        <p class="lede">Paste a screenshot and get a wall of directions back, all at once. It is automated Figma, a team of turbo developers on tap, and every version is <em>real, working HTML</em> you can open.</p>
+        <p class="lede">Paste a screenshot and get a wall of directions back, all at once. It is automated Figma, a team of five turbo developers on tap, and every version is <em>real, working HTML</em> you can open.</p>
         <div class="hero-cta">
           <a class="btn btn-ink" href="https://github.com/LunarWerxs/ReDesign/releases/latest" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
@@ -1080,7 +1121,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
     <!-- the run console, then the film strip it produced -->
     <div class="strip-block">
       <div class="hud">
-        <div class="wrap hud-in" aria-label="A finished run: one screenshot dispatched to five models at once">
+        <div class="wrap hud-in" aria-label="A finished run: one screenshot dispatched to ten models at once">
           <span class="hud-file">Run · <b>admin-dashboard.png</b></span>
           <ul class="hud-chips" aria-label="Models in this run">
             <li class="hud-chip"><span class="swatch" style="--c:#f043cf" aria-hidden="true"></span>Claude</li>
@@ -1371,42 +1412,76 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
     </div>
   </section>
 
+  <!-- ================= F. COMPARE ================= -->
+  <section id="compare" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="sec-bar rv"><span class="mlab">Sec. F &middot; How it compares</span></div>
+      <h2 class="sec-title rv">Where RēDesign fits.</h2>
+      <p class="sec-sub rv">Three honest ways to get from one screenshot to a redesign, and what each one actually gives you.</p>
+      <div class="sec-body">
+        <div class="twrap rv">
+          <table class="mtable">
+            <thead>
+              <tr><th scope="col">No.</th><th scope="col">Approach</th><th scope="col">Models per run</th><th scope="col">Output</th><th scope="col">What you pay for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="no">F1</td><td class="mod">RēDesign</td><td class="vis">5 in parallel, plus any you add</td><td class="src">Real HTML per model, side by side</td><td class="src">Free tool &middot; your own API usage</td></tr>
+              <tr><td class="no">F2</td><td class="mod">A single AI chat (ChatGPT, Claude, Gemini, etc.)</td><td class="vis">1 per conversation</td><td class="src">One chat reply at a time</td><td class="src">Whatever that chat product charges</td></tr>
+              <tr><td class="no">F3</td><td class="mod">Manual redesign (Figma and similar)</td><td class="vis">None</td><td class="src">Hand-built mockup or frontend</td><td class="src">Design tool subscription for team features, free tier for solo use &middot; your time</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sec-sub rv" style="margin-top: 20px; max-width: 66ch;">Comparing another model against a single AI chat means opening a new tab and re-pasting the screenshot. RēDesign dispatches the same input to every configured model at once and lines the results up next to the original, so the comparison is the default view, not extra work.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= G. FAQ ================= -->
   <section id="faq">
     <div class="wrap">
-      <div class="sec-bar rv"><span class="mlab">Sec. F &middot; FAQ</span></div>
+      <div class="sec-bar rv"><span class="mlab">Sec. G &middot; FAQ</span></div>
       <h2 class="sec-title rv">Questions, answered.</h2>
       <div class="sec-body">
         <ul class="feats" aria-label="Frequently asked questions">
           <li class="rv">
-            <span class="fidx">F&middot;1</span>
+            <span class="fidx">G&middot;1</span>
             <h3>Is RēDesign free?</h3>
             <p>Yes, RēDesign is free to download and MIT licensed, with the source on GitHub. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel.</p>
           </li>
           <li class="rv">
-            <span class="fidx">F&middot;2</span>
+            <span class="fidx">G&middot;2</span>
             <h3>Which AI models does RēDesign support?</h3>
-            <p>RēDesign ships with Claude, GPT, Gemini, DeepSeek, and Qwen configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required.</p>
+            <p>RēDesign ships with Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required.</p>
           </li>
           <li class="rv">
-            <span class="fidx">F&middot;3</span>
+            <span class="fidx">G&middot;3</span>
             <h3>Can I add my own AI model?</h3>
             <p>Yes. Add any other model, including your own, through a JSON config entry, no code change needed. It works whether the model can see images directly or only handle a text description. Config lives outside the app itself, so pointing it at a newer model version or disabling one doesn't require touching the app's code.</p>
           </li>
           <li class="rv">
-            <span class="fidx">F&middot;4</span>
+            <span class="fidx">G&middot;4</span>
             <h3>Does RēDesign keep my screenshots and API keys private?</h3>
             <p>Yes. RēDesign runs locally on localhost only, and your screenshots and API keys never leave your machine except to the model APIs you chose to use. Each model's generated HTML renders inside a locked-down iframe that cannot reach your data. Your keys are stored in a local, owner-only file and are never written into a run's saved output.</p>
           </li>
           <li class="rv">
-            <span class="fidx">F&middot;5</span>
+            <span class="fidx">G&middot;5</span>
             <h3>What operating systems does RēDesign run on?</h3>
             <p>RēDesign runs on Windows, Linux, and macOS on Apple silicon. On Windows there's a standalone GUI executable with the web app embedded, plus an optional system-tray build. On any supported OS you can instead run it from source with Bun 1.2 or newer, using bun install, a build step, and bun run src/index.ts serve.</p>
           </li>
           <li class="rv">
-            <span class="fidx">F&middot;6</span>
+            <span class="fidx">G&middot;6</span>
             <h3>Can I try RēDesign without spending on AI API calls?</h3>
             <p>Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">G&middot;7</span>
+            <h3>Does RēDesign work offline?</h3>
+            <p>The control panel itself runs entirely on localhost, no cloud account needed. Generating a real redesign needs internet access, though, since that step calls out to whichever AI provider APIs you've configured. A --mock dry run skips those calls entirely, so you can exercise the full flow without depending on any model being reachable.</p>
+          </li>
+          <li class="rv">
+            <span class="fidx">G&middot;8</span>
+            <h3>How is RēDesign different from just asking ChatGPT or Claude directly?</h3>
+            <p>Chatting with one model directly gives you one model's take per conversation, and comparing another means opening a new tab and re-pasting the screenshot. RēDesign fires the same screenshot at ten models in parallel by default, then lines every result up beside the original as real, working HTML you can open, filter, and click through, not just a chat reply.</p>
           </li>
         </ul>
       </div>
@@ -1432,8 +1507,17 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
         <li><a href="https://github.com/LunarWerxs/ReDesign" target="_blank" rel="noopener">GitHub &#8599;</a></li>
       </ul>
     </div>
+    <div class="foot-fleet">
+      <span class="mlab">More from LunarWerx</span>
+      <ul class="foot-links">
+        <li><a href="https://repoyeti.com/" target="_blank" rel="noopener">RepoYeti</a></li>
+        <li><a href="https://agenthydra.lunarwerx.com/" target="_blank" rel="noopener">AgentHydra</a></li>
+        <li><a href="https://sagethumbs.lunarwerx.com/" target="_blank" rel="noopener">SageThumbs</a></li>
+        <li><a href="https://ytsort.lunarwerx.com/" target="_blank" rel="noopener">YTSort</a></li>
+      </ul>
+    </div>
     <div class="colophon">
-      <span>MIT licensed &middot; made by LunarWerx</span>
+      <span>MIT licensed &middot; made by LunarWerx &middot; last updated 2026-08-23</span>
       <span class="aside">Photography permitted.</span>
     </div>
   </div>

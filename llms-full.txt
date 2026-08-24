@@ -1,0 +1,106 @@
+# RēDesign, full brief
+
+> One screenshot in, a wall of AI redesigns out. RēDesign fires a UI screenshot at Claude,
+> GPT, Gemini, DeepSeek, and Qwen at once, then lines every result up next to the original
+> so you can actually compare them instead of pasting the same image into ten chat tabs.
+
+Last updated: 2026-08-23. Canonical source: https://redesign.lunarwerx.com/
+Machine-readable pricing: https://redesign.lunarwerx.com/pricing.md
+
+## What it is
+
+RēDesign is a control panel that runs on your own machine (Bun + Hono backend, Vue 3 +
+Vite + Tailwind + shadcn-vue front end) and talks only to the AI model APIs you give it
+keys for. Drop in a UI screenshot, pick models and prompt presets, hit Run, and every
+model's redesign renders as real, self-contained HTML in a locked-down iframe next to the
+original, so results can be judged side by side instead of eyeballed one chat tab at a
+time. Adding another model is a JSON config entry, not a code change, and everything in
+the UI has a CLI twin plus an MCP server so an AI agent can drive it too.
+
+## Who it is for
+
+Developers and designers who want a fast first pass at redesigning an existing screen,
+comparing several AI models' takes at once, without hand-building mockups or manually
+re-running the same screenshot through five separate chat apps.
+
+## Key facts
+
+- Free to download, MIT licensed, source on GitHub.
+- Runs on Windows, Linux, and macOS (Apple silicon). Windows has a standalone GUI
+  executable with the web app embedded (no console window), plus an optional
+  system-tray build.
+- From source: Bun 1.2 or newer. `bun install && npm run build`, `cp .env.example .env`,
+  `bun run src/index.ts serve`, then open 127.0.0.1:5178.
+- Ships with 10 models by default: Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI. Claude, GPT,
+  Gemini, and Qwen see the screenshot natively; DeepSeek works from an auto-generated
+  description of it. Any OpenAI-compatible endpoint can be added as config, no code change.
+- 8 prompt presets out of the box: Faithful Refresh, Bold Reimagine, Clarity &
+  Accessibility, Conversion, Minimalist, Material 3, Approachable, Playful, or write
+  your own.
+- Every model fires in parallel on one screenshot; you can also ask one model for several
+  variants in the same run instead of just one roll of the dice.
+- Every run is grounded: a vision model inventories the screenshot once and hands that
+  description to every model alongside the image, so redesigns keep the real content
+  instead of dropping a tab or inventing a metric.
+- Key management: paste one key or a pile at once, RēDesign works out which provider each
+  belongs to and pools them; a failing key gets benched and quietly retried later, so one
+  dead key doesn't cost you the whole batch.
+- Cost awareness: an estimate before you hit Run, plus a per-run cost meter afterward. A
+  `--mock` dry run costs nothing.
+- Screenshots and API keys never leave your machine except to the model APIs you chose.
+  Keys live in a local `.env` file, owner-only (0600 on Unix), never written into a run's
+  saved output, and stripped from provider error text before it's shown.
+- Reproducible and scriptable: every run is written to a manifest, with a full CLI twin
+  (`bun run src/index.ts run|models|keys|mcp`) and an MCP server for agents.
+- Current version: 1.6.6.
+
+## Install
+
+- Packaged builds: download from GitHub Releases, run it, no install step. Windows also
+  gets `redesign-windows-x64.exe` (GUI, no console) or a system-tray build.
+- From source (any supported OS): Bun 1.2+, `bun install && npm run build`,
+  `cp .env.example .env`, `bun run src/index.ts serve`.
+
+## Pricing
+
+RēDesign itself is free and MIT licensed, no subscription, no account, no usage cap from
+LunarWerx. The only cost is your own usage of whichever AI provider APIs you configure
+(Claude, GPT, Gemini, DeepSeek, Qwen, or any OpenAI-compatible endpoint you add), billed
+directly by that provider to your own key. See /pricing.md for the machine-readable
+breakdown.
+
+## FAQ
+
+- **Is RēDesign free?** Yes, free to download, MIT licensed, source on GitHub.
+- **Which AI models does it support?** Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI by default,
+  plus any model added as a JSON config entry.
+- **Can I add my own AI model?** Yes, via JSON config, no code change required.
+- **Does it keep my screenshots and API keys private?** Yes, localhost only, keys and
+  screenshots never leave your machine except to the APIs you chose.
+- **What operating systems does it run on?** Windows, Linux, and macOS on Apple silicon.
+- **Can I try it without spending on AI API calls?** Yes, `--mock` costs nothing.
+- **Does it work offline?** The control panel runs locally with no cloud account, but
+  generating a real redesign needs internet access to reach the model APIs you configured.
+- **How is it different from asking ChatGPT or Claude directly?** A single chat gives one
+  model's take per conversation; RēDesign fires the same screenshot at ten models in
+  parallel and lines every result up as real HTML you can open, not just a chat reply.
+
+## Limitations
+
+- Not a hosted service. It runs on your own machine, so you need Bun (for source builds)
+  or a packaged download, plus your own API keys for whichever models you use.
+- Generating real redesigns requires internet access to reach the configured model APIs;
+  only the local control panel and a `--mock` dry run work without it.
+- DeepSeek does not see the screenshot natively. It works from an auto-generated text
+  description of it, so its take can miss visual detail the other models catch directly.
+- You bear whatever cost each AI provider charges for the API calls RēDesign makes on
+  your behalf; RēDesign shows an estimate first but does not cap or subsidize that spend.
+
+## Links
+
+- Home: https://redesign.lunarwerx.com/
+- Pricing (machine-readable): https://redesign.lunarwerx.com/pricing.md
+- Source code: https://github.com/LunarWerxs/ReDesign
+- Download: https://github.com/LunarWerxs/ReDesign/releases/latest
+- License: MIT
+- Parent studio: https://lunarwerx.com/
