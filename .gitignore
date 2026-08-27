@@ -29,3 +29,6 @@ npm-debug.log*
 yarn-error.log
 .parcel-cache/
 /CLAUDE.md
+
+# Generated symbol digest (~/.claude/tools/codemap.py) - local artifact, never committed.
+.claude/codemap/
