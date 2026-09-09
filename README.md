@@ -4,6 +4,8 @@
 
 The public landing page for RēDesign, live at **[redesign.lunarwerx.com](https://redesign.lunarwerx.com/)**.
 
+[![Discord](https://img.shields.io/badge/Discord-join_the_community-5865F2?logo=discord&logoColor=white)](https://discord.gg/PsWpeNUzhk)
+
 ![RēDesign share card](og-image.png)
 
 ## What this is
