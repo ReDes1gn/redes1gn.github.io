@@ -47,27 +47,27 @@ edit the dossier, not this block. Everything ABOVE the marker is yours.
 
 ### Features
 
-11 recorded - 11 shipped, 0 partial, 0 planned. Each `path:line` is where the feature is DEFINED, checked by `odin codex check`.
+11 recorded - 11 shipped, 0 partial, 0 planned. Each path is where the feature is DEFINED; the exact lines live in the Codex entry, which `odin codex check` re-verifies and repairs.
 
 **Shipped**
 
-- **Hero section with animated intro** - Eye-catching hero section at page top with the RēDesign logo animated in gradient and clear value proposition. - `index.html:1070`, `index.html:1095`
-- **Step-by-step workflow explanation** - Four-step visual explanation of the RēDesign process: Drop a screenshot, Pick models and presets, Hit run, Judge the wall. - `index.html:1203`, `index.html:1206`
-- **AI models showcase** - Displays the available AI models supported by RēDesign (Claude, GPT, Gemini, DeepSeek, Qwen, and custom models). - `index.html:1239`, `index.html:1242`
-- **Redesign gallery with interactive viewer** - Browsable gallery of example redesigns with a filter control and a readout showing the current selection. Users can view sample before/after comparisons. - `index.html:1269`, `index.html:1284`
-- **Instrument features explanation** - Describes technical capabilities including side-by-side viewer, reference images, self-healing keys, sandboxed rendering, local execution, and reproducible workflows. - `index.html:1331`, `index.html:1334`
-- **Setup and installation guide** - Installation instructions section explaining that RēDesign is one file with no install required, includes copyable setup commands. - `index.html:1386`, `index.html:1389`
-- **Product comparison section** - Positioning information showing how RēDesign fits relative to other design and AI tools. - `index.html:1416`, `index.html:1419`
-- **FAQ section** - Frequently asked questions covering pricing, supported models, custom models, privacy, OS support, offline capability, and differentiation from direct LLM usage. - `index.html:1440`, `index.html:1443`
-- **Responsive design system** - Full responsive design from 375px mobile to wide desktop with light/dark color palettes, gradient branding (pink-to-gold), and focus-visible keyboard navigation. - `index.html:26`, `index.html:78`
-- **Pricing reference page** - A standalone pricing.md page explaining the tool itself is free/MIT and the only real cost is the user's own AI API usage; served at the site root and listed in sitemap.xml, but not linked from index.html's nav or FAQ (undiscoverable from the page itself). - `pricing.md:1`
-- **Agent-readable site summary (llms.txt)** - llms.txt and llms-full.txt serve a structured, machine-readable product summary (what it does, key facts, links) at the site root for AI agents/LLM search per the llms.txt convention; listed in sitemap.xml but not linked from index.html. - `llms.txt:1`, `llms-full.txt:1`
+- **Hero section with animated intro** - Eye-catching hero section at page top with the RēDesign logo animated in gradient and clear value proposition. - `index.html`
+- **Step-by-step workflow explanation** - Four-step visual explanation of the RēDesign process: Drop a screenshot, Pick models and presets, Hit run, Judge the wall. - `index.html`
+- **AI models showcase** - Displays the available AI models supported by RēDesign (Claude, GPT, Gemini, DeepSeek, Qwen, and custom models). - `index.html`
+- **Redesign gallery with interactive viewer** - Browsable gallery of example redesigns with a filter control and a readout showing the current selection. Users can view sample before/after comparisons. - `index.html`
+- **Instrument features explanation** - Describes technical capabilities including side-by-side viewer, reference images, self-healing keys, sandboxed rendering, local execution, and reproducible workflows. - `index.html`
+- **Setup and installation guide** - Installation instructions section explaining that RēDesign is one file with no install required, includes copyable setup commands. - `index.html`
+- **Product comparison section** - Positioning information showing how RēDesign fits relative to other design and AI tools. - `index.html`
+- **FAQ section** - Frequently asked questions covering pricing, supported models, custom models, privacy, OS support, offline capability, and differentiation from direct LLM usage. - `index.html`
+- **Responsive design system** - Full responsive design from 375px mobile to wide desktop with light/dark color palettes, gradient branding (pink-to-gold), and focus-visible keyboard navigation. - `index.html`
+- **Pricing reference page** - A standalone pricing.md page explaining the tool itself is free/MIT and the only real cost is the user's own AI API usage; served at the site root and listed in sitemap.xml, but not linked from index.html's nav or FAQ (undiscoverable from the page itself). - `pricing.md`
+- **Agent-readable site summary (llms.txt)** - llms.txt and llms-full.txt serve a structured, machine-readable product summary (what it does, key facts, links) at the site root for AI agents/LLM search per the llms.txt convention; listed in sitemap.xml but not linked from index.html. - `llms.txt`, `llms-full.txt`
 
 ### Where to add a new one
 
-- **a new gallery item or sample redesign** - Add a new item to the gallery div (id='gallery') with image, title, and model attribution; update the gallery filter logic if needed anchors: `index.html:1284`
-- **a new FAQ question** - Add an h3 and following p inside the FAQ section; the page's accordion-style interaction will apply automatically anchors: `index.html:1440`
-- **a new section or page content** - Add a new section element with an id, write inline CSS for layout (all styles are in the <style> block), add any SVG illustrations inline anchors: `index.html:26`
+- **a new gallery item or sample redesign** - Add a new item to the gallery div (id='gallery') with image, title, and model attribution; update the gallery filter logic if needed anchors: `index.html`
+- **a new FAQ question** - Add an h3 and following p inside the FAQ section; the page's accordion-style interaction will apply automatically anchors: `index.html`
+- **a new section or page content** - Add a new section element with an id, write inline CSS for layout (all styles are in the <style> block), add any SVG illustrations inline anchors: `index.html`
 
 ### Gaps and wants
 
@@ -77,4 +77,4 @@ _Read it with `python odin.py codex brief redes1gn-github-io` in the Odin clone.
 ---
 
 _Generated by `odin codex about --publish redes1gn-github-io` on 2026-09-16 from a Codex dossier stamped 2026-09-04. Regenerate after the product moves; `odin codex about` reports drift._
-<!-- odin:about GENERATED END sha=79bb946a9772 -->
+<!-- odin:about GENERATED END sha=7e6e98210017 -->
