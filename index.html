@@ -910,6 +910,18 @@
     }
     .js .rv{ transform: none; }
   }
+  /* FAQ, collapsed. Eight expanded answers were a third of this page's words and all
+     of them below the fold; a summary row per question keeps the coverage (and the
+     FAQPage rich result) without the wall. Same pattern as RepoYeti and SageThumbs.
+     Every answer is also in the FAQPage JSON-LD, so nothing is lost by collapsing. */
+  .faq-list{display:grid;gap:0;max-width:840px;border-top:1px solid var(--hair)}
+  .faq-item{border-bottom:1px solid var(--hair)}
+  .faq-item>summary{cursor:pointer;list-style:none;padding:15px 2px;display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink)}
+  .faq-item>summary::-webkit-details-marker{display:none}
+  .faq-item>summary::after{content:"+";margin-left:auto;font-family:var(--mono);font-size:15px;color:var(--ink-3)}
+  .faq-item[open]>summary::after{content:"\2212"}
+  .faq-item>summary:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+  .faq-a{padding:0 2px 16px;margin:0;color:var(--ink-2);line-height:1.6;max-width:72ch}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <style>
@@ -1548,48 +1560,40 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       <div class="sec-bar rv"><span class="mlab">Sec. G &middot; FAQ</span></div>
       <h2 class="sec-title rv">Questions, answered.</h2>
       <div class="sec-body">
-        <ul class="feats" aria-label="Frequently asked questions">
-          <li class="rv">
-            <span class="fidx">G&middot;1</span>
-            <h3>Is RēDesign free?</h3>
-            <p>Yes, RēDesign is free to download and MIT licensed, with the source on GitHub. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;2</span>
-            <h3>Which AI models does RēDesign support?</h3>
-            <p>RēDesign ships with Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;3</span>
-            <h3>Can I add my own AI model?</h3>
-            <p>Yes. Add any other model, including your own, through a JSON config entry, no code change needed. It works whether the model can see images directly or only handle a text description. Config lives outside the app itself, so pointing it at a newer model version or disabling one doesn't require touching the app's code.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;4</span>
-            <h3>Does RēDesign keep my screenshots and API keys private?</h3>
-            <p>Yes. RēDesign runs locally on localhost only, and your screenshots and API keys never leave your machine except to the model APIs you chose to use. Each model's generated HTML renders inside a locked-down iframe that cannot reach your data. Your keys are stored in a local, owner-only file and are never written into a run's saved output.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;5</span>
-            <h3>What operating systems does RēDesign run on?</h3>
-            <p>RēDesign runs on Windows, Linux, and macOS on Apple silicon. On Windows there's a standalone GUI executable with the web app embedded, plus an optional system-tray build. On any supported OS you can instead run it from source with Bun 1.2 or newer, using bun install, a build step, and bun run src/index.ts serve.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;6</span>
-            <h3>Can I try RēDesign without spending on AI API calls?</h3>
-            <p>Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;7</span>
-            <h3>Does RēDesign work offline?</h3>
-            <p>The control panel itself runs entirely on localhost, no cloud account needed. Generating a real redesign needs internet access, though, since that step calls out to whichever AI provider APIs you've configured. A --mock dry run skips those calls entirely, so you can exercise the full flow without depending on any model being reachable.</p>
-          </li>
-          <li class="rv">
-            <span class="fidx">G&middot;8</span>
-            <h3>How is RēDesign different from just asking ChatGPT or Claude directly?</h3>
-            <p>Chatting with one model directly gives you one model's take per conversation, and comparing another means opening a new tab and re-pasting the screenshot. RēDesign fires the same screenshot at ten models in parallel by default, then lines every result up beside the original as real, working HTML you can open, filter, and click through, not just a chat reply.</p>
-          </li>
-        </ul>
+        <div class="faq-list">
+                <details class="faq-item rv">
+        <summary>Is RēDesign free?</summary>
+        <p class="faq-a">Yes, RēDesign is free to download and MIT licensed, with the source on GitHub. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>Which AI models does RēDesign support?</summary>
+        <p class="faq-a">RēDesign ships with Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI configured by default, and runs them all in parallel on a single screenshot. Claude, GPT, Gemini, and Qwen see the image directly; DeepSeek gets an auto-generated description of it instead. You can add any other model as a JSON config entry, with no code change required.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>Can I add my own AI model?</summary>
+        <p class="faq-a">Yes. Add any other model, including your own, through a JSON config entry, no code change needed. It works whether the model can see images directly or only handle a text description. Config lives outside the app itself, so pointing it at a newer model version or disabling one doesn't require touching the app's code.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>Does RēDesign keep my screenshots and API keys private?</summary>
+        <p class="faq-a">Yes. RēDesign runs locally on localhost only, and your screenshots and API keys never leave your machine except to the model APIs you chose to use. Each model's generated HTML renders inside a locked-down iframe that cannot reach your data. Your keys are stored in a local, owner-only file and are never written into a run's saved output.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>What operating systems does RēDesign run on?</summary>
+        <p class="faq-a">RēDesign runs on Windows, Linux, and macOS on Apple silicon. On Windows there's a standalone GUI executable with the web app embedded, plus an optional system-tray build. On any supported OS you can instead run it from source with Bun 1.2 or newer, using bun install, a build step, and bun run src/index.ts serve.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>Can I try RēDesign without spending on AI API calls?</summary>
+        <p class="faq-a">Yes. Add the --mock flag to a run and it costs nothing, so you can try the flow before spending on any model's API. When you do run for real, RēDesign shows a cost estimate before you hit Run and tracks a per-run cost meter afterward, so a big fan-out across several models never surprises you.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>Does RēDesign work offline?</summary>
+        <p class="faq-a">The control panel itself runs entirely on localhost, no cloud account needed. Generating a real redesign needs internet access, though, since that step calls out to whichever AI provider APIs you've configured. A --mock dry run skips those calls entirely, so you can exercise the full flow without depending on any model being reachable.</p>
+      </details>
+                <details class="faq-item rv">
+        <summary>How is RēDesign different from just asking ChatGPT or Claude directly?</summary>
+        <p class="faq-a">Chatting with one model directly gives you one model's take per conversation, and comparing another means opening a new tab and re-pasting the screenshot. RēDesign fires the same screenshot at ten models in parallel by default, then lines every result up beside the original as real, working HTML you can open, filter, and click through, not just a chat reply.</p>
+      </details>
+        </div>
       </div>
     </div>
   </section>
