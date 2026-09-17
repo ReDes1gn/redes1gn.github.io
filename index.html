@@ -809,6 +809,34 @@
   }
   .btn-paper:hover{ background: var(--band-fg); color: var(--band); }
 
+  /* ---------- per-OS downloads ---------- */
+  /* One tile per operating system we actually build for, each linking the FILE in the
+     release. The install section used to be a single "Download the latest release"
+     button pointing at a GitHub page, which made the visitor read an asset list and
+     work out which of five files was theirs (owner, 2026-09-16). Sharp corners and
+     mono labels because that is what the rest of this page is. */
+  .os-grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 26px; }
+  @media (max-width: 620px){ .os-grid{ grid-template-columns: 1fr; } }
+  .os-opt{
+    display: flex; flex-direction: column; gap: 8px;
+    padding: 16px 18px; text-decoration: none;
+    border: 1px solid rgba(242,239,232,.26); color: var(--band-fg);
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .os-opt:hover{ background: var(--band-fg); color: var(--band); border-color: var(--band-fg); }
+  .os-n{ display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-size: 15px; font-weight: 600; }
+  .os-n svg{ width: 15px; height: 15px; flex: 0 0 auto; }
+  .os-k{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--band-mut); }
+  .os-opt:hover .os-k{ color: var(--band); }
+  /* Marked by the runtime script once it knows the visitor's OS. When it cannot tell,
+     nothing is marked and all three stay equally clickable: a highlight that guesses
+     wrong is worse than no highlight. */
+  .os-opt.is-you{ border-color: var(--band-fg); }
+  .os-opt.is-you .os-k::after{ content: " · your OS"; }
+  .os-alt{ margin-top: 16px; display: flex; flex-wrap: wrap; gap: 7px 16px; align-items: baseline; }
+  .os-alt a{ color: var(--band-mut); text-decoration: none; border-bottom: 1px solid rgba(166,158,145,.45); }
+  .os-alt a:hover{ color: var(--band-fg); border-bottom-color: var(--band-fg); }
+
   /* ---------- footer ---------- */
   .cal-thin{
     height: 6px;
@@ -963,9 +991,9 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       "description": "Drop in one UI screenshot and RēDesign runs it past Claude, GPT, Gemini and more at once, then lines up every redesign next to the original so you can compare.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Windows, Linux, macOS (Apple silicon)",
-      "softwareVersion": "1.6.6",
+      "softwareVersion": "1.6.7",
       "url": "https://redesign.lunarwerx.com/",
-      "downloadUrl": "https://github.com/LunarWerxs/ReDesign/releases/latest",
+      "downloadUrl": "https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-windows-x64.exe",
       "softwareHelp": {
         "@type": "CreativeWork",
         "url": "https://github.com/LunarWerxs/ReDesign"
@@ -1153,9 +1181,12 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       <div>
         <p class="lede">Paste a screenshot and get a wall of directions back, all at once. It is automated Figma, a team of five turbo developers on tap, and every version is <em>real, working HTML</em> you can open.</p>
         <div class="hero-cta">
-          <a class="btn btn-ink" href="https://github.com/LunarWerxs/ReDesign/releases/latest" target="_blank" rel="noopener">
+          <!-- Links the FILE, not the releases page, and the runtime script below swaps it
+               for the visitor's own OS. The external-link arrow is gone with the page it
+               used to point at: this downloads without navigating anywhere. -->
+          <a class="btn btn-ink" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-windows-x64.exe" download aria-label="Download RēDesign free for Windows">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
-            Download for free <span class="arr" aria-hidden="true">&#8599;</span>
+            <span class="js-dl-label">Download free for Windows</span>
           </a>
           <a class="ghost-link" href="#specimens">See the specimens &darr;</a>
         </div>
@@ -1434,8 +1465,26 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       <div class="install-grid">
         <div class="rv">
           <p class="sec-sub">Grab the build for your platform, run it, open 127.0.0.1:5178, drop in your API keys. Done.</p>
-          <a class="btn btn-paper" href="https://github.com/LunarWerxs/ReDesign/releases/latest" target="_blank" rel="noopener">Download the latest release <span class="arr" aria-hidden="true">&#8599;</span></a>
-          <p class="mlab" style="margin-top: 18px;">Windows &middot; Linux &middot; macOS (Apple silicon)</p>
+          <div class="os-grid">
+            <a class="os-opt" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-windows-x64.exe" download aria-label="Download RēDesign for Windows, a single .exe with no install">
+              <span class="os-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>Windows</span>
+              <span class="os-k">One file · .exe</span>
+            </a>
+            <a class="os-opt" data-dl="macos-arm64" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-macos-arm64.tar.gz" download aria-label="Download RēDesign for macOS on Apple silicon">
+              <span class="os-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>macOS</span>
+              <span class="os-k">Apple silicon · .tar.gz</span>
+            </a>
+            <a class="os-opt" data-dl="linux-x64" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-linux-x64.tar.gz" download aria-label="Download RēDesign for Linux x64">
+              <span class="os-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>Linux</span>
+              <span class="os-k">x64 · .tar.gz</span>
+            </a>
+          </div>
+          <p class="mlab os-alt">
+            <span class="js-app-version">v1.6.7</span>
+            <a data-dl="win-x64-zip" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-windows-x64.zip" download>Windows folder build .zip</a>
+            <a data-dl="win-x64-tray" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/redesign-windows-x64-with-tray.zip" download>&hellip; with tray .zip</a>
+            <a data-dl="sha256" href="https://github.com/LunarWerxs/ReDesign/releases/download/v1.6.7/SHA256SUMS.txt" download>Checksums</a>
+          </p>
         </div>
         <div class="rv">
           <div class="term">
@@ -1841,5 +1890,125 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
 })();
 </script>
 <!-- /LunarWerx Discord badge -->
+<script>
+/* Keeps the download links, the version label and the JSON-LD current without a
+ * redeploy, and points the big button at the visitor's own operating system.
+ *
+ * The buttons link the FILE now, not /releases/latest. A GitHub page listing five
+ * archives is a wall in front of the one action this page exists to produce, and it
+ * is worse here than anywhere else in the fleet because this is the product that
+ * actually ships for three operating systems (owner, 2026-09-16).
+ *
+ * A direct asset URL is version-pinned, so it would 404 the day a release ships.
+ * Two things stop that: scripts/sync-version.mjs rewrites the baked-in URLs on a
+ * schedule and refuses to write one whose asset the release does not carry, and this
+ * script repairs the gap between a release and that job running. With JS off, the
+ * baked-in URLs still download the right file -- the Windows one, which is the build
+ * most people take. */
+(function(){
+  var REPO = "https://github.com/LunarWerxs/ReDesign";
+
+  /* Every asset a release carries, keyed by the data-dl value the markup uses. The
+     filenames have no version in them, so only the tag dates these URLs. */
+  var FILES = {
+    "win-x64"     : "redesign-windows-x64.exe",
+    "win-x64-zip" : "redesign-windows-x64.zip",
+    "win-x64-tray": "redesign-windows-x64-with-tray.zip",
+    "macos-arm64" : "redesign-macos-arm64.tar.gz",
+    "linux-x64"   : "redesign-linux-x64.tar.gz",
+    "sha256"      : "SHA256SUMS.txt"
+  };
+  /* What the big button says once we know where the visitor is. macOS keeps its
+     qualifier: the only Mac build is Apple silicon, so an Intel Mac has to see that
+     before it downloads something that will not run. */
+  var LABEL = {
+    "win-x64"    : "Download free for Windows",
+    "macos-arm64": "Download free for macOS (Apple silicon)",
+    "linux-x64"  : "Download free for Linux (x64)"
+  };
+
+  var state = { version: null, os: null, urls: {} };
+
+  /* The version already on the page, read off a download href rather than a separate
+     data attribute: the href is the thing that has to be right, so nothing else can
+     silently disagree with it. */
+  (function(){
+    var a = document.querySelector("a[data-dl]");
+    var m = a && (a.getAttribute("href") || "").match(/\/download\/v(\d+\.\d+\.\d+[^\/]*)\//);
+    if (m) state.version = m[1];
+  })();
+
+  /* Android's UA says Linux and iPadOS says Mac, and there is no build for either, so
+     both fall through to null and the baked-in Windows default stands. ChromeOS does
+     the same. Guessing wrong here hands someone an archive that cannot run. */
+  function detectOS(){
+    var ua = navigator.userAgent || "";
+    var p  = (navigator.userAgentData && navigator.userAgentData.platform) || "";
+    if (/Android|iPhone|iPad|iPod|CrOS/i.test(ua)) return null;
+    if (/mac/i.test(p)   || /Mac OS X|Macintosh/i.test(ua)) return "macos-arm64";
+    if (/linux/i.test(p) || /Linux/i.test(ua))              return "linux-x64";
+    if (/win/i.test(p)   || /Windows/i.test(ua))            return "win-x64";
+    return null;
+  }
+
+  function urlFor(key){
+    if (state.urls[key]) return state.urls[key];              // the release said so
+    if (!state.version || !FILES[key]) return null;           // leave the baked-in href alone
+    return REPO + "/releases/download/v" + state.version + "/" + FILES[key];
+  }
+
+  /* Idempotent: safe to call again as detection and the release fetch land. */
+  function render(){
+    var primary = state.os || "win-x64";
+    document.querySelectorAll("a[data-dl]").forEach(function(a){
+      var key = a.getAttribute("data-dl");
+      if (a.classList.contains("btn")) key = primary;        // the big button follows the OS
+      a.setAttribute("data-dl", key);
+      var href = urlFor(key);
+      if (href) a.setAttribute("href", href);
+    });
+    document.querySelectorAll(".js-dl-label").forEach(function(el){ el.textContent = LABEL[primary]; });
+    document.querySelectorAll("a.btn[data-dl]").forEach(function(a){
+      a.setAttribute("aria-label", LABEL[primary].replace("Download free", "Download RēDesign free"));
+    });
+    document.querySelectorAll(".os-grid a[data-dl]").forEach(function(a){
+      a.classList.toggle("is-you", state.os !== null && a.getAttribute("data-dl") === state.os);
+    });
+  }
+
+  try {
+    state.os = detectOS();
+    render();
+    fetch("https://api.github.com/repos/LunarWerxs/ReDesign/releases/latest", { headers: { "Accept": "application/vnd.github+json" } })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(rel){
+        if (!rel || !rel.tag_name) return;
+        var bare = String(rel.tag_name).trim().replace(/^v/, "");
+        if (!/^\d+\.\d+\.\d+/.test(bare)) return;   // never write a draft name into the page
+        state.version = bare;
+        /* Prefer the URL the release itself reports over one rebuilt from a filename:
+           a renamed asset is then still found instead of 404ing. */
+        (rel.assets || []).forEach(function(asset){
+          Object.keys(FILES).forEach(function(key){
+            if (FILES[key] === asset.name && asset.browser_download_url) state.urls[key] = asset.browser_download_url;
+          });
+        });
+        render();
+        document.querySelectorAll(".js-app-version").forEach(function(el){ el.textContent = "v" + bare; });
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s){
+          try {
+            var data = JSON.parse(s.textContent), changed = false;
+            (function walk(o){ if (o && typeof o === "object") { Object.keys(o).forEach(function(k){
+              if (k === "softwareVersion") { o[k] = bare; changed = true; }
+              else if (k === "downloadUrl" && urlFor("win-x64")) { o[k] = urlFor("win-x64"); changed = true; }
+              else { walk(o[k]); } }); } })(data);
+            if (changed) s.textContent = JSON.stringify(data);
+          } catch (e) {}
+        });
+      })
+      .catch(function(){});
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
