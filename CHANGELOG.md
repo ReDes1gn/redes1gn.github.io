@@ -4,6 +4,23 @@ All notable changes to the RēDesign landing page are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- **Removed every em-dash from the visible copy**, a standing style rule that had never been
+  applied to pages already published. Each became the punctuation that fits its sentence, and
+  the rewrite was gated on the page's word-stream being identical afterwards, so only
+  punctuation moved.
+- **Shortened the long paragraphs.** Every visible paragraph is now under 40 words; no fact
+  left the page, the trailing sentences did.
+
+### Added
+
+- **A copy gate, `scripts/copy-budget.mjs`,** run by CI on every push touching the page.
+  Em-dashes are a hard zero; page length is a ratchet against a recorded baseline rather than
+  a fixed bar, so the page can shrink but cannot creep back.
+
 ## [2.0.0] - 2026-07-13
 
 Complete visual redesign. Six full candidate designs were generated and scored by
