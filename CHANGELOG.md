@@ -8,6 +8,8 @@ project uses [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
+- **Site version 1.0.0** (was 0.1.0): no public project stays on a zero major (owner directive, 2026-09-18).
+
 - **Removed every em-dash from the visible copy**, a standing style rule that had never been
   applied to pages already published. Each became the punctuation that fits its sentence, and
   the rewrite was gated on the page's word-stream being identical afterwards, so only
