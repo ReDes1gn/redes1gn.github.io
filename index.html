@@ -37,12 +37,20 @@
   @font-face{
     font-family:'Archivo'; font-style:normal; font-weight:100 900; font-display:swap;
     src:url("/fonts/archivo-latin-ext.woff2") format("woff2");
-    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    unicode-range:U+0100-0111, U+0114-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
   @font-face{
     font-family:'Archivo'; font-style:normal; font-weight:100 900; font-display:swap;
     src:url("/fonts/archivo-latin.woff2") format("woff2");
     unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* The only Latin Extended glyph the page draws in Archivo is the macron in "RēDesign". The full
+     latin-ext face above leaves U+0112-0113 (the macron e, both cases) out of its range and this 1 KB subset serves it, so the
+     32 KB file is only fetched for other extended characters. Rebuilt by scripts/optimize-assets.py. */
+  @font-face{
+    font-family:'Archivo'; font-style:normal; font-weight:100 900; font-display:swap;
+    src:url("/fonts/archivo-latin-ext-page.woff2") format("woff2");
+    unicode-range:U+0112-0113;
   }
   @font-face{
     font-family:'Fragment Mono'; font-style:normal; font-weight:400; font-display:swap;
@@ -1273,19 +1281,19 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
           <figcaption><span class="who"><span class="idx">IN&middot;00</span>Original input</span><span>admin-dashboard.png</span></figcaption>
         </figure>
         <figure>
-          <button class="zoombtn" type="button"><img src="/shots/gallery/claude-bold.png" width="726" height="462" alt="Claude's bold take: a dark editorial dashboard with a serif greeting and an amber revenue chart" decoding="async" fetchpriority="high"></button>
+          <button class="zoombtn" type="button"><img src="/shots/gallery/claude-bold.webp" width="726" height="462" alt="Claude's bold take: a dark editorial dashboard with a serif greeting and an amber revenue chart" decoding="async" fetchpriority="high"></button>
           <figcaption><span class="who"><span class="idx">OUT&middot;01</span><span class="swatch" style="--c:#f043cf" aria-hidden="true"></span>Claude</span><span>Bold</span></figcaption>
         </figure>
         <figure>
-          <button class="zoombtn" type="button"><img src="/shots/gallery/gpt-faithful.png" width="726" height="462" alt="GPT's faithful refresh: the same light dashboard, tidied up with soft cards" decoding="async" fetchpriority="high"></button>
+          <button class="zoombtn" type="button"><img src="/shots/gallery/gpt-faithful.webp" width="726" height="462" alt="GPT's faithful refresh: the same light dashboard, tidied up with soft cards" decoding="async" fetchpriority="high"></button>
           <figcaption><span class="who"><span class="idx">OUT&middot;02</span><span class="swatch" style="--c:#10a37f" aria-hidden="true"></span>GPT</span><span>Faithful</span></figcaption>
         </figure>
         <figure>
-          <button class="zoombtn" type="button"><img src="/shots/gallery/gemini-bold.png" width="726" height="462" alt="Gemini's bold take: a dark operations dashboard with violet telemetry bars" decoding="async"></button>
+          <button class="zoombtn" type="button"><img src="/shots/gallery/gemini-bold.webp" width="726" height="462" alt="Gemini's bold take: a dark operations dashboard with violet telemetry bars" decoding="async"></button>
           <figcaption><span class="who"><span class="idx">OUT&middot;03</span><span class="swatch" style="--c:#4b5cf0" aria-hidden="true"></span>Gemini</span><span>Bold</span></figcaption>
         </figure>
         <figure>
-          <button class="zoombtn" type="button"><img src="/shots/gallery/qwen-minimalist.png" width="726" height="462" alt="Qwen's minimalist pass: near monochrome with plain black bars" decoding="async"></button>
+          <button class="zoombtn" type="button"><img src="/shots/gallery/qwen-minimalist.webp" width="726" height="462" alt="Qwen's minimalist pass: near monochrome with plain black bars" decoding="async"></button>
           <figcaption><span class="who"><span class="idx">OUT&middot;04</span><span class="swatch" style="--c:#ff9a5a" aria-hidden="true"></span>Qwen</span><span>Minimal</span></figcaption>
         </figure>
       </div>
@@ -1381,42 +1389,42 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
 
         <div class="gallery" id="gallery">
           <figure class="gitem rv" data-model="claude">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/claude-bold.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/claude-bold.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Claude's bold take: a dark editorial dashboard with a serif greeting and an amber revenue chart"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;01</span><span class="swatch" style="--c:#f043cf" aria-hidden="true"></span><span class="name">Claude</span></span><span class="preset">Bold Reimagine</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="gpt">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/gpt-faithful.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/gpt-faithful.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="GPT's faithful refresh: the same light dashboard, tidied up with soft cards"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;02</span><span class="swatch" style="--c:#10a37f" aria-hidden="true"></span><span class="name">GPT</span></span><span class="preset">Faithful Refresh</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="gemini">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/gemini-bold.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/gemini-bold.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Gemini's bold take: a dark operations dashboard with violet telemetry bars"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;03</span><span class="swatch" style="--c:#4b5cf0" aria-hidden="true"></span><span class="name">Gemini</span></span><span class="preset">Bold Reimagine</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="qwen">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/qwen-minimalist.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/qwen-minimalist.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Qwen's minimalist pass: near monochrome with plain black bars"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;04</span><span class="swatch" style="--c:#ff9a5a" aria-hidden="true"></span><span class="name">Qwen</span></span><span class="preset">Minimalist</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="claude">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/claude-faithful.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/claude-faithful.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Claude's faithful refresh: the original layout with crisper cards and violet accents"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;05</span><span class="swatch" style="--c:#f043cf" aria-hidden="true"></span><span class="name">Claude</span></span><span class="preset">Faithful Refresh</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="gpt">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/gpt-bold.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/gpt-bold.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="GPT's bold take: a dark command center with an ops score ring and insight cards"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;06</span><span class="swatch" style="--c:#10a37f" aria-hidden="true"></span><span class="name">GPT</span></span><span class="preset">Bold Reimagine</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="gemini">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/gemini-minimalist.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/gemini-minimalist.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Gemini's minimalist pass: a stripped back light dashboard"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;07</span><span class="swatch" style="--c:#4b5cf0" aria-hidden="true"></span><span class="name">Gemini</span></span><span class="preset">Minimalist</span></figcaption>
           </figure>
           <figure class="gitem rv" data-model="qwen">
-            <button class="zoombtn art" type="button"><img src="/shots/gallery/qwen-bold.png" width="726" height="462" loading="lazy" decoding="async"
+            <button class="zoombtn art" type="button"><img src="/shots/gallery/qwen-bold.webp" width="726" height="462" loading="lazy" decoding="async"
                  alt="Qwen's bold take: a dark dashboard with teal spark lines"></button>
             <figcaption class="cap"><span class="who"><span class="idx">C&middot;08</span><span class="swatch" style="--c:#ff9a5a" aria-hidden="true"></span><span class="name">Qwen</span></span><span class="preset">Bold Reimagine</span></figcaption>
           </figure>
@@ -1438,7 +1446,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
           <span class="mark bl" aria-hidden="true"></span>
           <span class="mark br" aria-hidden="true"></span>
           <button class="zoombtn frame" type="button">
-            <img src="/shots/app.png" width="890" height="689" loading="lazy" decoding="async"
+            <img src="/shots/app.webp" width="890" height="689" loading="lazy" decoding="async"
                  alt="The RēDesign control panel with the sample dashboard loaded: paste or drop screenshots, pick models and prompts, then hit Run reimagine.">
           </button>
           <figcaption>Fig. D&middot;0 &middot; the control panel &middot; Bun + Hono &middot; localhost:5178</figcaption>
