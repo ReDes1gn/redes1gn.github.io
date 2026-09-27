@@ -315,6 +315,7 @@
     font-weight: 500;
   }
   .lede em{ font-style: normal; border-bottom: 2px solid var(--ink); }
+  .need{ font-size: .98rem; line-height: 1.55; color: var(--ink); opacity: .78; max-width: 58ch; margin-top: .8rem; }
   .hero-cta{ display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 26px; }
   .btn{
     display: inline-flex; align-items: center; gap: 10px;
@@ -1213,6 +1214,8 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
     <div class="wrap hero-low">
       <div>
         <p class="lede">Paste a screenshot, get a wall of directions back, every one <em>real, working HTML</em> you can open.</p>
+        <!-- What you need and what it costs, under the headline: a visitor could not tell how "every model at once" is free (SUE focus group, 2026-09-27). -->
+        <p class="need"><strong>What you need:</strong> your own API key from at least one AI provider (Anthropic, OpenAI, Google, DeepSeek or Alibaba); it bills you for the calls, and RēDesign shows the cost before you run. <strong>What it costs:</strong> the app is free and MIT licensed, and <code>--mock</code> runs the whole flow for $0.</p>
         <div class="hero-cta">
           <a class="btn btn-ink js-dl-primary" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe" download aria-label="Download RēDesign for Windows">
             <svg class="js-dl-mark" width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#os-win"/></svg>
