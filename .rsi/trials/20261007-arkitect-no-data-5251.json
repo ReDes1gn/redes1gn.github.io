@@ -1,5 +1,85 @@
 {
- "closed": null,
+ "closed": {
+  "a": {
+   "commit": "31bb7f008035f1e926cf06a3a57c0a4b747fa5fd",
+   "def_hash": "5a64254c5433ebaa",
+   "dirty": false,
+   "id": "m-20261007T095955-2784bd",
+   "load_after": null,
+   "load_before": null,
+   "machine": "MPC-HELL",
+   "metric": "arkitect_no_data",
+   "project": "redes1gn-github-io",
+   "reason": null,
+   "seconds": null,
+   "settings": {
+    "arkitect_checks_total": 1394,
+    "arkitect_tool_version": null,
+    "gate": "exact",
+    "kind": "count",
+    "measure_files": {},
+    "measured_at": "2026-10-07T09:57:11+00:00",
+    "source": "index"
+   },
+   "started": "2026-10-07T09:59:55+00:00",
+   "status": "ok",
+   "value": 166
+  },
+  "applies_if": null,
+  "at": "2026-10-07T10:03:41+00:00",
+  "b": {
+   "commit": "2163c23de92f3e3f8a529fb545138bcdf32b21e6",
+   "def_hash": "5a64254c5433ebaa",
+   "dirty": false,
+   "id": "m-20261007T100318-96fd3d",
+   "load_after": null,
+   "load_before": null,
+   "machine": "MPC-HELL",
+   "metric": "arkitect_no_data",
+   "project": "redes1gn-github-io",
+   "reason": null,
+   "seconds": null,
+   "settings": {
+    "arkitect_checks_total": 1394,
+    "arkitect_tool_version": null,
+    "gate": "exact",
+    "kind": "count",
+    "measure_files": {},
+    "measured_at": "2026-10-07T10:02:25+00:00",
+    "source": "index"
+   },
+   "started": "2026-10-07T10:03:18+00:00",
+   "status": "ok",
+   "value": 166
+  },
+  "guards": [
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "arkitect_gating_errors",
+    "state": "ok"
+   },
+   {
+    "a": 112,
+    "b": 112,
+    "declared": false,
+    "metric": "arkitect_warnings",
+    "state": "ok"
+   },
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "deps_total",
+    "state": "ok"
+   }
+  ],
+  "method": "exact: 166 -> 166",
+  "note": "No repo-side change: the 166 no-data checks come from the portable Architect profile not applying to a static HTML site; nothing honest to edit",
+  "pattern": null,
+  "verdict": "inconclusive"
+ },
  "def_hash": "5a64254c5433ebaa",
  "id": "20261007-arkitect-no-data-5251",
  "idea": "Static site: check whether any repo-side file lets the portable Architect checks find data; expect none",
