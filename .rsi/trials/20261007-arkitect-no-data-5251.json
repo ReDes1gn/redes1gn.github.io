@@ -1,0 +1,24 @@
+{
+ "closed": null,
+ "def_hash": "5a64254c5433ebaa",
+ "id": "20261007-arkitect-no-data-5251",
+ "idea": "Static site: check whether any repo-side file lets the portable Architect checks find data; expect none",
+ "lane": "normal",
+ "metric": "arkitect_no_data",
+ "opened": {
+  "at": "2026-10-07T09:59:38+00:00",
+  "by": "blogi",
+  "commit": "31bb7f008035f1e926cf06a3a57c0a4b747fa5fd",
+  "machine": "MPC-HELL"
+ },
+ "pass_line": null,
+ "predict": {
+  "expect": 166.0,
+  "hi": 166.0,
+  "lo": 160.0,
+  "p_keep": 0.05
+ },
+ "probe_minutes": null,
+ "project": "redes1gn-github-io",
+ "schema": "hydra-rsi-trial/1"
+}
