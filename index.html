@@ -185,6 +185,12 @@
   }
   .skip-link:focus{ top: 12px; }
 
+  /* ---------- retired notice (2026-10-22: v1.8.0 is the last release) ---------- */
+  .retired{ background: var(--band); color: var(--band-fg); border-bottom: 1px solid var(--ink); }
+  .retired .wrap{ display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; padding-block: 11px; }
+  .retired-tag{ flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--band-mut); }
+  .retired p{ font-size: 14px; line-height: 1.45; }
+
   /* ---------- nav ---------- */
   .site-nav{
     position: sticky; top: 0; z-index: 100;
@@ -1192,6 +1198,11 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
     </a>
   </div>
 </header>
+
+<!-- Retired 2026-10-22: the standalone app gets no more releases; the README and the v1.8.0 release say the same. -->
+<aside class="retired" aria-label="RēDesign is retired">
+  <div class="wrap"><span class="retired-tag">Retired</span><p>Final release: v1.8.0, no further updates.</p></div>
+</aside>
 
 <div class="ruler" aria-hidden="true"></div>
 

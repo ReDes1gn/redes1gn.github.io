@@ -19,6 +19,8 @@ project uses [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- **A retired notice under the header.** RēDesign is retired: v1.8.0 is its last release, and
+  the page now says so before anything else. The download links still point at v1.8.0.
 - **A copy gate, `scripts/copy-budget.mjs`,** run by CI on every push touching the page.
   Em-dashes are a hard zero; page length is a ratchet against a recorded baseline rather than
   a fixed bar, so the page can shrink but cannot creep back.
