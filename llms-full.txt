@@ -52,13 +52,11 @@ re-running the same screenshot through five separate chat apps.
   saved output, and stripped from provider error text before it's shown.
 - Reproducible and scriptable: every run is written to a manifest, with a full CLI twin
   (`bun run src/index.ts run|models|keys|mcp`) and an MCP server for agents.
-- Current version: 1.6.6.
+- Final version: 1.8.0.
 
 ## Install
 
-- Packaged builds: download from GitHub Releases, run it, no install step. Windows also
-  gets `redesign-windows-x64.exe` (GUI, no console) or a system-tray build.
-- From source (any supported OS): Bun 1.2+, `bun install && npm run build`,
+- No prebuilt downloads any more. From source (any supported OS): Bun 1.2+, `bun install && npm run build`,
   `cp .env.example .env`, `bun run src/index.ts serve`.
 
 ## Pricing
@@ -72,7 +70,7 @@ breakdown.
 
 ## FAQ
 
-- **Is RēDesign free?** For personal and other noncommercial use, yes: free to download under the PolyForm Noncommercial License, source on GitHub. Commercial use needs a licence from LunarWerx.
+- **Is RēDesign free?** For personal and other noncommercial use, yes: free to use under the PolyForm Noncommercial License, source on GitHub. Commercial use needs a licence from LunarWerx.
 - **Which AI models does it support?** Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI by default,
   plus any model added as a JSON config entry.
 - **Can I add my own AI model?** Yes, via JSON config, no code change required.
@@ -88,8 +86,8 @@ breakdown.
 
 ## Limitations
 
-- Not a hosted service. It runs on your own machine, so you need Bun (for source builds)
-  or a packaged download, plus your own API keys for whichever models you use.
+- Not a hosted service. It runs on your own machine from source, so you need Bun,
+  plus your own API keys for whichever models you use.
 - Generating real redesigns requires internet access to reach the configured model APIs;
   only the local control panel and a `--mock` dry run work without it.
 - DeepSeek does not see the screenshot natively. It works from an auto-generated text
@@ -102,6 +100,5 @@ breakdown.
 - Home: https://redesign.lunarwerx.com/
 - Pricing (machine-readable): https://redesign.lunarwerx.com/pricing.md
 - Source code: https://github.com/LunarWerxs/ReDesign
-- Download: https://github.com/LunarWerxs/ReDesign/releases/latest
 - License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)
 - Parent studio: https://lunarwerx.com/

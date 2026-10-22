@@ -17,5 +17,4 @@ RēDesign is a control panel that runs on your own machine (Bun + Hono backend, 
 ## Links
 - Home: https://redesign.lunarwerx.com/
 - Source code: https://github.com/LunarWerxs/ReDesign
-- Download: https://github.com/LunarWerxs/ReDesign/releases/latest
 - License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)

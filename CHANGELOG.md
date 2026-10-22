@@ -6,6 +6,12 @@ project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Removed
+
+- **The download buttons.** Every RēDesign release was taken down on 2026-10-22, so the buttons now lead to
+  the source on GitHub, and the install section shows how to run it from source. The job that kept the
+  download links current went with them.
+
 ### Changed
 
 - **Site version 1.0.0** (was 0.1.0): no public project stays on a zero major (owner directive, 2026-09-18).

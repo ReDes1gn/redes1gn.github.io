@@ -7,14 +7,13 @@ Last updated: 2026-08-23
 RēDesign is free for personal and other noncommercial use under the PolyForm Noncommercial
 License 1.0.0. No account, no subscription, no seat limit, no usage cap imposed by LunarWerx.
 Commercial use, such as running it for a for-profit business or building it into a paid
-product, needs a separate licence from LunarWerx, quoted on request. Download a prebuilt release or build it from
-source, either way, the application costs nothing to acquire or run.
+product, needs a separate licence from LunarWerx, quoted on request. Build it from source with Bun;
+the application costs nothing to acquire or run.
 
 - License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)
 - Commercial licence: https://github.com/LunarWerxs/ReDesign/issues/new?template=licence_quote.yml
 - Source: https://github.com/LunarWerxs/ReDesign
-- Download: https://github.com/LunarWerxs/ReDesign/releases/latest
-- Current version: 1.6.6
+- Final version: 1.8.0
 
 ## What you actually pay for: your own AI API usage
 

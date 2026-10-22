@@ -765,7 +765,7 @@
     margin-top: clamp(28px, 4vw, 52px);
     align-items: start;
   }
-  @media (max-width: 900px){ .install-grid{ grid-template-columns: 1fr; } }
+  @media (max-width: 900px){ .install-grid{ grid-template-columns: minmax(0, 1fr); } }
 
   .term{
     background: var(--term);
@@ -824,38 +824,7 @@
   }
   .btn-paper:hover{ background: var(--band-fg); color: var(--band); }
 
-  /* ---------- downloads ---------- */
-  /* Platform strip under the hero button on paper; one tile per OS inside the ink band.
-     Every platform visible at a glance, no OS named twice, no paragraphs (owner, 2026-09-16). */
-  .dl-platforms{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 18px; margin-top:16px;
-    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
-  .dl-platforms a{ display:inline-flex; align-items:center; gap:7px; color:var(--ink-3); text-decoration:none; padding-bottom:2px; border-bottom:1px solid transparent; }
-  .dl-platforms a:hover{ color:var(--ink); }
-  .dl-platforms a.is-you{ color:var(--ink); border-bottom-color:var(--ink); }
-  .dl-platforms svg{ width:13px; height:13px; flex:none; }
-  .os-tiles{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:26px; }
-  @media (max-width: 620px){ .os-tiles{ grid-template-columns:1fr; } }
-  .os-tile{ display:flex; flex-direction:column; border:1px solid rgba(242,239,232,.26); color:var(--band-fg); transition:border-color .15s, background .15s; }
-  .os-tile:hover{ border-color:rgba(242,239,232,.6); }
-  .os-tile.is-you{ border-color:var(--band-fg); }
-  .os-main{ display:flex; flex-direction:column; gap:8px; padding:16px 18px 10px; color:var(--band-fg); text-decoration:none; }
-  .os-main:hover{ background:rgba(242,239,232,.06); }
-  .os-h{ display:flex; align-items:center; gap:9px; font-family:var(--sans); font-size:15px; font-weight:600; }
-  .os-h svg{ width:15px; height:15px; flex:none; }
-  .os-p{ font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--band-mut); }
-  .os-tile.is-you .os-p::after{ content:" · your machine"; }
-  .os-alts{ display:flex; flex-wrap:wrap; gap:4px 12px; padding:0 18px 14px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--band-mut); }
-  .os-alts a{ color:var(--band-mut); text-decoration:none; border-bottom:1px solid rgba(166,158,145,.45); }
-  .os-alts a:hover{ color:var(--band-fg); border-bottom-color:var(--band-fg); }
-  .os-foot{ margin-top:16px; font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--band-mut); }
-  .os-foot a{ color:var(--band-mut); text-decoration:none; border-bottom:1px solid rgba(166,158,145,.45); }
-  .os-foot a:hover{ color:var(--band-fg); border-bottom-color:var(--band-fg); }
-  /* nav: Download is the ink button, GitHub is an outline square */
-  .nav-dl{ display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--paper); background:var(--ink); text-decoration:none; padding:12px 16px; border:1px solid var(--ink); transition:background .15s; }
-  .nav-dl:hover{ background:#000; }
-  .nav-dl svg{ width:14px; height:14px; }
-  .nav-git.nav-git-icon{ padding:11px; gap:0; background:transparent; color:var(--ink); margin-right:8px; }
+  .nav-git.nav-git-icon{ padding:11px; gap:0; background:transparent; color:var(--ink); }
   .nav-git.nav-git-icon:hover{ background:var(--ink); color:var(--paper); }
 
   /* ---------- footer ---------- */
@@ -1026,7 +995,6 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
       "operatingSystem": "Windows, Linux, macOS (Apple silicon)",
       "softwareVersion": "1.8.0",
       "url": "https://redesign.lunarwerx.com/",
-      "downloadUrl": "https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe",
       "softwareHelp": {
         "@type": "CreativeWork",
         "url": "https://github.com/LunarWerxs/ReDesign"
@@ -1099,7 +1067,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
           "name": "Is RēDesign free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For personal and other noncommercial use, yes: RēDesign is free to download under the PolyForm Noncommercial License, with the source on GitHub; commercial use needs a licence from LunarWerx. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel."
+            "text": "For personal and other noncommercial use, yes: RēDesign is free to use under the PolyForm Noncommercial License, with the source on GitHub; commercial use needs a licence from LunarWerx. There are no prebuilt downloads any more: run it from source with Bun 1.2 or newer and open the control panel."
           }
         },
         {
@@ -1192,16 +1160,13 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
         <li><a href="#install">Install</a></li>
       </ul>
     </nav>
-    <a class="nav-git nav-git-icon" href="https://github.com/LunarWerxs/ReDesign" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a><a class="nav-dl js-dl-primary" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe" download aria-label="Download RēDesign for Windows">
-      <svg class="js-dl-mark" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#os-win"/></svg>
-      Download
-    </a>
+    <a class="nav-git nav-git-icon" href="https://github.com/LunarWerxs/ReDesign" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
   </div>
 </header>
 
-<!-- Retired 2026-10-22: the standalone app gets no more releases; the README and the v1.8.0 release say the same. -->
+<!-- Retired 2026-10-22: no more releases, and every earlier one was taken down that day; the source stays on GitHub. -->
 <aside class="retired" aria-label="RēDesign is retired">
-  <div class="wrap"><span class="retired-tag">Retired</span><p>Final release: v1.8.0, no further updates.</p></div>
+  <div class="wrap"><span class="retired-tag">Retired</span><p>No longer distributed. The source stays on GitHub.</p></div>
 </aside>
 
 <div class="ruler" aria-hidden="true"></div>
@@ -1228,13 +1193,9 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
         <!-- What you need and what it costs, under the headline: a visitor could not tell how "every model at once" is free (SUE focus group, 2026-09-27). -->
         <p class="need"><strong>What you need:</strong> an API key from one or more AI providers (Anthropic, OpenAI, Google, DeepSeek, Alibaba), billed per call; RēDesign shows the cost before you run. <strong>What it costs:</strong> free for personal use; <code>--mock</code> runs it for $0.</p>
         <div class="hero-cta">
-          <a class="btn btn-ink js-dl-primary" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe" download aria-label="Download RēDesign for Windows">
-            <svg class="js-dl-mark" width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#os-win"/></svg>
-            <span class="js-dl-label">Download free for Windows</span>
-          </a>
+          <a class="btn btn-ink" href="https://github.com/LunarWerxs/ReDesign#quick-start" target="_blank" rel="noopener">Get the source on GitHub</a>
           <a class="ghost-link" href="#specimens">See the specimens &darr;</a>
         </div>
-        <p class="dl-platforms"><a data-tile="win" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe" download><svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#os-win"/></svg>Windows</a> <a data-tile="mac" data-dl="macos-arm64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-macos-arm64.tar.gz" download><svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#os-apple"/></svg>macOS</a> <a data-tile="linux" data-dl="linux-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-linux-x64.tar.gz" download><svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#os-linux"/></svg>Linux</a></p>
       </div>
     </div>
 
@@ -1506,32 +1467,11 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
   <section class="band" id="install">
     <div class="wrap">
       <div class="sec-bar rv"><span class="mlab">Sec. E &middot; Installation</span></div>
-      <h2 class="sec-title rv">One file. No install.</h2>
+      <h2 class="sec-title rv">Run it from source.</h2>
       <div class="install-grid">
         <div class="rv">
-          <p class="sec-sub">Grab the build for your platform, run it, open 127.0.0.1:5178, drop in your API keys. Done.</p>
-          <div class="os-tiles">
-            <div class="os-tile" data-tile="win">
-              <a class="os-main" data-dl="win-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.exe" download aria-label="Download RēDesign for Windows, a single .exe with no install">
-                <span class="os-h"><svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#os-win"/></svg>Windows</span>
-                <span class="os-p">one file · .exe</span>
-              </a>
-              <span class="os-alts">also <a data-dl="win-x64-zip" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64.zip" download>.zip</a> <a data-dl="win-x64-tray" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-windows-x64-with-tray.zip" download>.zip with tray</a></span>
-            </div>
-            <div class="os-tile" data-tile="mac">
-              <a class="os-main" data-dl="macos-arm64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-macos-arm64.tar.gz" download aria-label="Download RēDesign for macOS on Apple silicon">
-                <span class="os-h"><svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#os-apple"/></svg>macOS</span>
-                <span class="os-p">Apple silicon</span>
-              </a>
-            </div>
-            <div class="os-tile" data-tile="linux">
-              <a class="os-main" data-dl="linux-x64" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/redesign-linux-x64.tar.gz" download aria-label="Download RēDesign for Linux x64">
-                <span class="os-h"><svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#os-linux"/></svg>Linux</span>
-                <span class="os-p">x64</span>
-              </a>
-            </div>
-          </div>
-          <p class="os-foot"><span class="js-app-version">v1.8.0</span> · <a data-dl="sha256" href="https://github.com/LunarWerxs/ReDesign/releases/latest/download/SHA256SUMS.txt" download>checksums</a> · <a href="https://github.com/LunarWerxs/ReDesign/releases" target="_blank" rel="noopener">all releases</a></p>
+          <p class="sec-sub">No prebuilt downloads any more. Clone the source, run it with Bun, open 127.0.0.1:5178, drop in your API keys.</p>
+          <a class="btn btn-paper" href="https://github.com/LunarWerxs/ReDesign" target="_blank" rel="noopener">Source on GitHub</a>
         </div>
         <div class="rv">
           <div class="term">
@@ -1539,7 +1479,9 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
               <span>From source &middot; Bun 1.2+</span>
               <button class="copy-btn" type="button" id="copyCmds" aria-label="Copy the setup commands">Copy</button>
             </div>
-<pre><code><span class="pr">$</span> bun install &amp;&amp; npm run build
+<pre><code><span class="pr">$</span> git clone https://github.com/LunarWerxs/ReDesign
+<span class="pr">$</span> cd ReDesign
+<span class="pr">$</span> bun install &amp;&amp; npm run build
 <span class="pr">$</span> cp .env.example .env
 <span class="pr">$</span> bun run src/index.ts serve
 <span class="out">&rarr; RēDesign serving at http://127.0.0.1:5178</span></code></pre>
@@ -1585,7 +1527,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
         <div class="faq-list">
                 <details class="faq-item rv">
         <summary>Is RēDesign free?</summary>
-        <p class="faq-a">For personal and other noncommercial use, yes: RēDesign is free to download under the PolyForm Noncommercial License, with the source on GitHub; commercial use needs a licence from LunarWerx. Grab a prebuilt release for Windows, Linux, or macOS on Apple silicon, or build it from source with Bun 1.2 or newer. There's no install step for the packaged build, just run it and open the control panel.</p>
+        <p class="faq-a">For personal and other noncommercial use, yes: RēDesign is free to use under the PolyForm Noncommercial License, with the source on GitHub; commercial use needs a licence from LunarWerx. There are no prebuilt downloads any more: run it from source with Bun 1.2 or newer and open the control panel.</p>
       </details>
                 <details class="faq-item rv">
         <summary>Which AI models does RēDesign support?</summary>
@@ -1783,7 +1725,7 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
   /* ---- copy the setup commands ---- */
   var copyBtn = document.getElementById('copyCmds');
   if (copyBtn){
-    var cmds = 'bun install && npm run build\ncp .env.example .env\nbun run src/index.ts serve';
+    var cmds = 'git clone https://github.com/LunarWerxs/ReDesign\ncd ReDesign\nbun install && npm run build\ncp .env.example .env\nbun run src/index.ts serve';
     copyBtn.addEventListener('click', function(){
       function done(ok){
         copyBtn.textContent = ok ? 'Copied' : 'Select + copy';
@@ -1975,125 +1917,5 @@ a.lw-parent:hover .lw-tip,a.lw-parent:focus-visible .lw-tip{opacity:1;visibility
 })();
 </script>
 <!-- /LunarWerx Discord badge -->
-<script>
-/* Download links, version label and JSON-LD, kept current without a redeploy; the
-   big buttons follow the visitor's machine; the platform strip and the install tiles
-   mark it. The static hrefs are already direct file URLs (scripts/sync-version.mjs
-   rewrites them on every release and refuses to write one the release does not
-   carry); this repairs the gap between a release and that job. With JS off the
-   baked-in URLs still download a real build. */
-(function(){
-  var REPO = "https://github.com/LunarWerxs/ReDesign";
-  var DEFAULT_KEY = "win-x64";
-  var MODE = "os";   // "os": Windows/macOS/Linux; "winarch": one OS, x64 vs ARM64
-  function files(v){ return {
-      "win-x64": "redesign-windows-x64.exe",
-      "win-x64-zip": "redesign-windows-x64.zip",
-      "win-x64-tray": "redesign-windows-x64-with-tray.zip",
-      "macos-arm64": "redesign-macos-arm64.tar.gz",
-      "linux-x64": "redesign-linux-x64.tar.gz",
-      "sha256": "SHA256SUMS.txt"
-  }; }
-  var LABEL = {
-      "win-x64": { text: "Download free for Windows", mark: "win", aria: "Windows" },
-      "macos-arm64": { text: "Download free for macOS", mark: "apple", aria: "macOS (Apple silicon)" },
-      "linux-x64": { text: "Download free for Linux", mark: "linux", aria: "Linux (x64)" }
-  };
-  /* tile -> which asset key to hand over; arm/x86 refine it where a build exists. */
-  var PICK = {
-      "win": { def: "win-x64" },
-      "mac": { def: "macos-arm64" },
-      "linux": { def: "linux-x64" }
-  };
-
-  var state = { version: null, tile: null, key: null, urls: {} };
-  (function(){   // the version already on the page, read off a download href
-    var a = document.querySelector("a[data-dl]");
-    var m = a && (a.getAttribute("href") || "").match(/\/download\/v(\d+\.\d+\.\d+[^\/]*)\//);
-    if (m) state.version = m[1];
-  })();
-
-  /* Android says Linux and iPadOS says Mac, and there is no build for either, so
-     both leave the tile null and the default stands; ChromeOS too. */
-  function detectTile(){
-    var ua = navigator.userAgent || "";
-    var p  = (navigator.userAgentData && navigator.userAgentData.platform) || "";
-    if (/Android|iPhone|iPad|iPod|CrOS/i.test(ua)) return null;
-    var win = /win/i.test(p) || /Windows/i.test(ua);
-    if (MODE === "winarch") return win ? (/\b(?:ARM64|aarch64)\b/i.test(ua) ? "arm64" : "x64") : null;
-    if (/mac/i.test(p)   || /Mac OS X|Macintosh/i.test(ua)) return "mac";
-    if (/linux/i.test(p) || /Linux/i.test(ua))              return "linux";
-    return win ? "win" : null;
-  }
-  function pick(tile, arm){
-    var p = PICK[tile]; if (!p) return null;
-    if (arm === true  && p.arm) return p.arm;
-    if (arm === false && p.x86) return p.x86;
-    return p.def;
-  }
-  function urlFor(key){
-    if (state.urls[key]) return state.urls[key];              // the release said so
-    var f = files(state.version || "")[key];                 // no filename here carries the version
-    return f ? REPO + "/releases/latest/download/" + f : null; // GitHub's stable redirect to the newest release
-  }
-  function all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
-
-  /* Idempotent: runs on load, again when client hints answer, again when the API does. */
-  function render(){
-    var key = state.key || DEFAULT_KEY, L = LABEL[key] || LABEL[DEFAULT_KEY];
-    all("a.js-dl-primary").forEach(function(a){
-      a.setAttribute("data-dl", key);
-      a.setAttribute("aria-label", "Download RēDesign for " + L.aria);
-    });
-    all(".js-dl-label").forEach(function(el){ el.textContent = L.text; });
-    all(".js-dl-arch").forEach(function(el){ if (L.sub) el.textContent = L.sub; });
-    all(".js-dl-mark use").forEach(function(u){ u.setAttribute("href", "#os-" + L.mark); });
-    all("a[data-dl]").forEach(function(a){ var h = urlFor(a.getAttribute("data-dl")); if (h) a.setAttribute("href", h); });
-    all("[data-tile]").forEach(function(el){
-      el.classList.toggle("is-you", state.tile !== null && el.getAttribute("data-tile") === state.tile);
-    });
-  }
-
-  try {
-    state.tile = detectTile();
-    state.key  = pick(state.tile, null);
-    render();
-    var uad = navigator.userAgentData;
-    if (state.tile && uad && typeof uad.getHighEntropyValues === "function") {
-      uad.getHighEntropyValues(["architecture"]).then(function(h){
-        var arm = /arm/i.test((h && h.architecture) || "");
-        if (MODE === "winarch") { state.tile = arm ? "arm64" : "x64"; }
-        state.key = pick(state.tile, arm);
-        render();
-      }).catch(function(){});
-    }
-    fetch("https://api.github.com/repos/LunarWerxs/ReDesign/releases/latest", { headers: { "Accept": "application/vnd.github+json" } })
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(rel){
-        if (!rel || !rel.tag_name) return;
-        var bare = String(rel.tag_name).trim().replace(/^v/, "");
-        if (!/^\d+\.\d+\.\d+/.test(bare)) return;   // never write a draft name into the page
-        state.version = bare;
-        var want = files(bare);   // prefer the URL the release reports over a rebuilt filename
-        (rel.assets || []).forEach(function(asset){
-          Object.keys(want).forEach(function(k){ if (want[k] === asset.name && asset.browser_download_url) state.urls[k] = asset.browser_download_url; });
-        });
-        render();
-        all(".js-app-version").forEach(function(el){ el.textContent = "v" + bare; });
-        all('script[type="application/ld+json"]').forEach(function(s){
-          try {
-            var data = JSON.parse(s.textContent), changed = false;
-            (function walk(o){ if (o && typeof o === "object") { Object.keys(o).forEach(function(k){
-              if (k === "softwareVersion") { o[k] = bare; changed = true; }
-              else if (k === "downloadUrl" && urlFor(DEFAULT_KEY)) { o[k] = urlFor(DEFAULT_KEY); changed = true; }
-              else { walk(o[k]); } }); } })(data);
-            if (changed) s.textContent = JSON.stringify(data);
-          } catch (e) {}
-        });
-      })
-      .catch(function(){});
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>
