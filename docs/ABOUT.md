@@ -60,7 +60,7 @@ edit the dossier, not this block. Everything ABOVE the marker is yours.
 - **Product comparison section** - Positioning information showing how RēDesign fits relative to other design and AI tools. - `index.html`
 - **FAQ section** - Frequently asked questions covering pricing, supported models, custom models, privacy, OS support, offline capability, and differentiation from direct LLM usage. - `index.html`
 - **Responsive design system** - Full responsive design from 375px mobile to wide desktop with light/dark color palettes, gradient branding (pink-to-gold), and focus-visible keyboard navigation. - `index.html`
-- **Pricing reference page** - A standalone pricing.md page explaining the tool itself is free/MIT and the only real cost is the user's own AI API usage; served at the site root and listed in sitemap.xml, but not linked from index.html's nav or FAQ (undiscoverable from the page itself). - `pricing.md`
+- **Pricing reference page** - A standalone pricing.md page explaining the tool itself is free for noncommercial use (PolyForm Noncommercial) and the only real cost is the user's own AI API usage; served at the site root and listed in sitemap.xml, but not linked from index.html's nav or FAQ (undiscoverable from the page itself). - `pricing.md`
 - **Agent-readable site summary (llms.txt)** - llms.txt and llms-full.txt serve a structured, machine-readable product summary (what it does, key facts, links) at the site root for AI agents/LLM search per the llms.txt convention; listed in sitemap.xml but not linked from index.html. - `llms.txt`, `llms-full.txt`
 
 ### Where to add a new one

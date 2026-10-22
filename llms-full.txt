@@ -25,7 +25,7 @@ re-running the same screenshot through five separate chat apps.
 
 ## Key facts
 
-- Free to download, MIT licensed, source on GitHub.
+- Free for personal and other noncommercial use under the PolyForm Noncommercial License, source on GitHub; commercial use needs a licence from LunarWerx.
 - Runs on Windows, Linux, and macOS (Apple silicon). Windows has a standalone GUI
   executable with the web app embedded (no console window), plus an optional
   system-tray build.
@@ -63,15 +63,16 @@ re-running the same screenshot through five separate chat apps.
 
 ## Pricing
 
-RēDesign itself is free and MIT licensed, no subscription, no account, no usage cap from
-LunarWerx. The only cost is your own usage of whichever AI provider APIs you configure
+RēDesign itself is free for personal and other noncommercial use (PolyForm Noncommercial), with
+no subscription, no account and no usage cap from LunarWerx; commercial use needs a licence
+from LunarWerx, quoted on request. The only cost is your own usage of whichever AI provider APIs you configure
 (Claude, GPT, Gemini, DeepSeek, Qwen, or any OpenAI-compatible endpoint you add), billed
 directly by that provider to your own key. See /pricing.md for the machine-readable
 breakdown.
 
 ## FAQ
 
-- **Is RēDesign free?** Yes, free to download, MIT licensed, source on GitHub.
+- **Is RēDesign free?** For personal and other noncommercial use, yes: free to download under the PolyForm Noncommercial License, source on GitHub. Commercial use needs a licence from LunarWerx.
 - **Which AI models does it support?** Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI by default,
   plus any model added as a JSON config entry.
 - **Can I add my own AI model?** Yes, via JSON config, no code change required.
@@ -102,5 +103,5 @@ breakdown.
 - Pricing (machine-readable): https://redesign.lunarwerx.com/pricing.md
 - Source code: https://github.com/LunarWerxs/ReDesign
 - Download: https://github.com/LunarWerxs/ReDesign/releases/latest
-- License: MIT
+- License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)
 - Parent studio: https://lunarwerx.com/

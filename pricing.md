@@ -2,13 +2,16 @@
 
 Last updated: 2026-08-23
 
-## The tool itself: free
+## The tool itself: free for noncommercial use
 
-RēDesign is free and open source, MIT licensed. No account, no subscription, no seat
-limit, no usage cap imposed by LunarWerx. Download a prebuilt release or build it from
+RēDesign is free for personal and other noncommercial use under the PolyForm Noncommercial
+License 1.0.0. No account, no subscription, no seat limit, no usage cap imposed by LunarWerx.
+Commercial use, such as running it for a for-profit business or building it into a paid
+product, needs a separate licence from LunarWerx, quoted on request. Download a prebuilt release or build it from
 source, either way, the application costs nothing to acquire or run.
 
-- License: MIT (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSE)
+- License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)
+- Commercial licence: https://github.com/LunarWerxs/ReDesign/issues/new?template=licence_quote.yml
 - Source: https://github.com/LunarWerxs/ReDesign
 - Download: https://github.com/LunarWerxs/ReDesign/releases/latest
 - Current version: 1.6.6
@@ -22,7 +25,7 @@ behalf.
 
 | Item | Who charges | Notes |
 | --- | --- | --- |
-| RēDesign application | Nobody, free and MIT licensed | No account or subscription |
+| RēDesign application | Nobody for noncommercial use; LunarWerx for commercial use | No account or subscription |
 | Claude API calls | Anthropic, at your key's rate | Bring your own key |
 | GPT API calls | OpenAI, at your key's rate | Bring your own key |
 | Gemini API calls | Google, at your key's rate | Bring your own key |
@@ -48,8 +51,8 @@ meter are informational, and your own provider account limits are the real backs
 
 ## For agentic / automated buyers
 
-- No paid tiers, no license key to purchase, no usage-based fee from LunarWerx to budget
-  for.
+- No paid tiers and no usage-based fee from LunarWerx. A deployment for a for-profit
+  business needs a commercial licence from LunarWerx, quoted on request.
 - The only recurring cost a deployment incurs is whatever AI provider API usage it
   generates, governed entirely by the API keys it is given.
 - `--mock` gives a zero-cost integration test path.

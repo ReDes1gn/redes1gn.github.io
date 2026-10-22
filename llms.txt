@@ -5,7 +5,7 @@
 RēDesign is a control panel that runs on your own machine (Bun + Hono backend, Vue 3 + Vite + Tailwind + shadcn-vue front end) and talks only to the model APIs you give it keys for. Every generated redesign is real, working HTML, rendered in a locked-down iframe so it can look but not touch your data. Adding another model is a JSON config entry, not a code change, and everything in the UI has a CLI twin plus an MCP server so an AI agent can drive it too.
 
 ## Key facts
-- Free to download, MIT licensed, source on GitHub.
+- Free for personal and other noncommercial use under the PolyForm Noncommercial License, source on GitHub; commercial use needs a licence from LunarWerx.
 - Runs on Windows, Linux, and macOS (Apple silicon); Windows also has a GUI executable with an optional system-tray build.
 - From source: Bun 1.2 or newer (`bun install && npm run build`, `cp .env.example .env`, `bun run src/index.ts serve`), then open 127.0.0.1:5178.
 - Ships with Claude, GPT, Gemini, DeepSeek, Qwen, and Meta AI by default; Claude, GPT, Gemini, and Qwen see the screenshot natively, DeepSeek works from an auto-generated description.
@@ -18,4 +18,4 @@ RēDesign is a control panel that runs on your own machine (Bun + Hono backend, 
 - Home: https://redesign.lunarwerx.com/
 - Source code: https://github.com/LunarWerxs/ReDesign
 - Download: https://github.com/LunarWerxs/ReDesign/releases/latest
-- License: MIT
+- License: PolyForm Noncommercial 1.0.0 (https://github.com/LunarWerxs/ReDesign/blob/main/LICENSING.md)
